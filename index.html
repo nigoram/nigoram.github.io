@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Уроки по математике • Главная</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+      padding: 20px 16px;
+      background: linear-gradient(145deg, #fdf6f0 0%, #fce4ec 30%, #f3e5f5 60%, #e8f5e9 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* 🌸 ЛЕТНИЕ ЭЛЕМЕНТЫ */
+    .season-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .flower {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: floatFlower 12s ease-in-out infinite alternate;
+    }
+    .flower::before,
+    .flower::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: inherit;
+      opacity: 0.7;
+    }
+    .flower::before {
+      width: 100%;
+      height: 100%;
+      transform: rotate(60deg);
+    }
+    .flower::after {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-60deg);
+    }
+
+    .flower-1 {
+      width: 120px;
+      height: 120px;
+      background: #f8bbd0;
+      top: 5%;
+      left: 3%;
+      animation-duration: 14s;
+    }
+    .flower-2 {
+      width: 90px;
+      height: 90px;
+      background: #b39ddb;
+      bottom: 8%;
+      right: 2%;
+      animation-duration: 16s;
+      animation-delay: 2s;
+    }
+    .flower-3 {
+      width: 150px;
+      height: 150px;
+      background: #ffccbc;
+      top: 60%;
+      left: 5%;
+      animation-duration: 18s;
+      animation-delay: 4s;
+    }
+    .flower-4 {
+      width: 70px;
+      height: 70px;
+      background: #80cbc4;
+      top: 15%;
+      right: 8%;
+      animation-duration: 13s;
+      animation-delay: 1s;
+    }
+    .flower-5 {
+      width: 100px;
+      height: 100px;
+      background: #ffab91;
+      bottom: 20%;
+      left: 20%;
+      animation-duration: 15s;
+      animation-delay: 3s;
+    }
+
+    @keyframes floatFlower {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      33% { transform: translate(20px, -30px) rotate(15deg) scale(1.1); }
+      66% { transform: translate(-15px, 20px) rotate(-10deg) scale(0.95); }
+      100% { transform: translate(10px, -10px) rotate(5deg) scale(1.05); }
+    }
+
+    .butterfly {
+      position: absolute;
+      font-size: 2.2rem;
+      opacity: 0.25;
+      animation: flyButterfly 20s linear infinite;
+    }
+    .butterfly:nth-child(1) {
+      top: 10%;
+      left: 20%;
+      animation-duration: 22s;
+      font-size: 2.8rem;
+    }
+    .butterfly:nth-child(2) {
+      bottom: 15%;
+      right: 10%;
+      animation-duration: 25s;
+      animation-delay: 5s;
+      font-size: 2rem;
+    }
+    .butterfly:nth-child(3) {
+      top: 45%;
+      left: 65%;
+      animation-duration: 18s;
+      animation-delay: 10s;
+      font-size: 2.4rem;
+    }
+    .butterfly:nth-child(4) {
+      top: 70%;
+      left: 5%;
+      animation-duration: 28s;
+      animation-delay: 3s;
+      font-size: 1.8rem;
+    }
+
+    @keyframes flyButterfly {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      25% { transform: translate(80px, -40px) rotate(10deg) scale(1.2); }
+      50% { transform: translate(160px, 20px) rotate(-8deg) scale(0.9); }
+      75% { transform: translate(240px, -30px) rotate(12deg) scale(1.1); }
+      100% { transform: translate(320px, 0) rotate(0deg) scale(1); }
+    }
+
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 100px;
+      filter: blur(1px);
+      animation: cloudMove 30s linear infinite;
+    }
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .cloud-1 {
+      width: 180px;
+      height: 50px;
+      top: 8%;
+      left: -50px;
+      animation-duration: 35s;
+    }
+    .cloud-1::before {
+      width: 80px;
+      height: 80px;
+      top: -40px;
+      left: 20px;
+    }
+    .cloud-1::after {
+      width: 100px;
+      height: 100px;
+      top: -50px;
+      left: 70px;
+    }
+    .cloud-2 {
+      width: 220px;
+      height: 55px;
+      bottom: 12%;
+      right: -80px;
+      animation-duration: 40s;
+      animation-delay: 10s;
+    }
+    .cloud-2::before {
+      width: 90px;
+      height: 90px;
+      top: -45px;
+      left: 30px;
+    }
+    .cloud-2::after {
+      width: 120px;
+      height: 120px;
+      top: -60px;
+      left: 80px;
+    }
+
+    @keyframes cloudMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(100vw + 200px)); }
+    }
+
+    /* 🌸 ОСНОВНОЙ КОНТЕЙНЕР */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 40px;
+      padding: 30px 24px 35px;
+      box-shadow: 0 20px 60px rgba(233, 30, 99, 0.10), 0 8px 24px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .emoji-big {
+      font-size: 3.2rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #4a2c3a;
+      margin-bottom: 4px;
+      letter-spacing: -0.3px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #7a5a6a;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    /* 🌸 КАРТОЧКИ УРОКОВ */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 18px 0 28px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 18px 22px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      transition: 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: #2d1f2a;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .card:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: #f48fb1;
+      box-shadow: 0 12px 32px rgba(244, 143, 177, 0.18);
+    }
+
+    .card:active {
+      transform: scale(0.97);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      width: 52px;
+      text-align: center;
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #3d2633;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: #7a5a6a;
+    }
+
+    .card-arrow {
+      color: #b08a9a;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+
+    .card:hover .card-arrow {
+      transform: translateX(4px);
+      color: #e91e63;
+    }
+
+    .card-add {
+      border-left: 5px solid #f06292;
+    }
+    .card-add .card-icon {
+      color: #e91e63;
+    }
+
+    .card-sub {
+      border-left: 5px solid #ba68c8;
+    }
+    .card-sub .card-icon {
+      color: #8e24aa;
+    }
+
+    .card-fraction {
+      border-left: 5px solid #4dd0e1;
+    }
+    .card-fraction .card-icon {
+      color: #00acc1;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 5px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #5d3f4e;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      font-weight: 500;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      color: #9a7a8a;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      padding-top: 16px;
+    }
+
+    /* 📱 АДАПТИВ */
+    @media (max-width: 550px) {
+      body { padding: 14px 12px; }
+      .container { padding: 20px 16px; }
+      h1 { font-size: 1.6rem; }
+      .card { padding: 14px 16px; gap: 12px; }
+      .card-icon { font-size: 1.8rem; width: 40px; }
+      .card-title { font-size: 1rem; }
+      .emoji-big { font-size: 2.6rem; }
+
+      .flower-1 { width: 70px; height: 70px; }
+      .flower-2 { width: 55px; height: 55px; }
+      .flower-3 { width: 90px; height: 90px; }
+      .flower-4 { width: 45px; height: 45px; }
+      .flower-5 { width: 60px; height: 60px; }
+
+      .butterfly { font-size: 1.4rem; }
+      .cloud-1, .cloud-2 { display: none; }
+    }
+
+    @media (max-width: 400px) {
+      .container { padding: 16px 12px; }
+      .card { padding: 12px 14px; gap: 10px; }
+      .card-icon { font-size: 1.5rem; width: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌸 ЛЕТНИЙ ФОН -->
+  <div class="season-bg">
+    <div class="flower flower-1"></div>
+    <div class="flower flower-2"></div>
+    <div class="flower flower-3"></div>
+    <div class="flower flower-4"></div>
+    <div class="flower flower-5"></div>
+
+    <div class="butterfly">🦋</div>
+    <div class="butterfly">🦋</div>
+    <div class="butterfly">🦋</div>
+    <div class="butterfly">🦋</div>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+  </div>
+
+  <!-- 🌸 ГЛАВНОЕ МЕНЮ -->
+  <div class="container">
+
+    <span class="emoji-big">🌸</span>
+    <h1>Уроки по математике</h1>
+    <p class="subtitle">Выбери тему и начни учиться ✨</p>
+
+    <div class="cards">
+
+      <!-- КАРТОЧКА: СЛОЖЕНИЕ ОБЫКНОВЕННЫХ ДРОБЕЙ -->
+      <a href="slozhenie.html" class="card card-add">
+        <span class="card-icon">➕</span>
+        <div class="card-content">
+          <div class="card-title">Сложение обыкновенных дробей</div>
+          <div class="card-desc">Одинаковые и разные знаменатели • интерактивная игра</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <!-- КАРТОЧКА: ВЫЧИТАНИЕ ОБЫКНОВЕННЫХ ДРОБЕЙ -->
+      <a href="vychitanie.html" class="card card-sub">
+        <span class="card-icon">➖</span>
+        <div class="card-content">
+          <div class="card-title">Вычитание обыкновенных дробей</div>
+          <div class="card-desc">Одинаковые и разные знаменатели • интерактивная игра</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <!-- 🟢 ЗАГОТОВКА: ДЕСЯТИЧНЫЕ ДРОБИ (скоро) -->
+      <div class="card" style="opacity: 0.5; cursor: default; border-left: 5px solid #b0bec5;">
+        <span class="card-icon" style="color: #90a4ae;">🔜</span>
+        <div class="card-content">
+          <div class="card-title" style="color: #90a4ae;">Десятичные дроби</div>
+          <div class="card-desc" style="color: #b0bec5;">Скоро появится…</div>
+        </div>
+        <span class="card-arrow" style="color: #b0bec5;">⏳</span>
+      </div>
+
+    </div>
+
+    <div class="badges">
+      <span class="badge">📚 2 урока</span>
+      <span class="badge">📱 на телефоне</span>
+      <span class="badge">✨ интерактив</span>
+      <span class="badge">☀️ лето 2026</span>
+    </div>
+
+    <div class="footer-note">
+      🌸 Учись с удовольствием! Каждый сезон — новое оформление
+    </div>
+
+  </div>
+
+</body>
+</html>
