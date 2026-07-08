@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Сложение обыкновенных дробей</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: white;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .lesson-card {
+      max-width: 880px;
+      width: 100%;
+      background: white;
+      border-radius: 24px;
+      padding: 15px 12px 20px;
+    }
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    h1 small {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #3b3b3b;
+      background: #f2f2f2;
+      padding: 2px 10px;
+      border-radius: 30px;
+    }
+    .section {
+      background: #f9fbfc;
+      border-radius: 16px;
+      padding: 12px 10px;
+      margin-bottom: 14px;
+      border: 1px solid #eef2f5;
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title span {
+      background: #1e2b3a;
+      color: white;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .rule-box {
+      background: white;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 6px 0 10px 0;
+      border-left: 5px solid #2b7a78;
+    }
+    .rule-box strong {
+      color: #0b3b3a;
+    }
+    .highlight-blue {
+      background: #d4edff;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 500;
+      color: #005a8c;
+    }
+    .highlight-orange {
+      background: #ffe0b5;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 500;
+      color: #a55400;
+    }
+    .highlight-green {
+      background: #c8f0d6;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 500;
+      color: #0a5e2b;
+    }
+    .frac {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: middle;
+      margin: 0 2px;
+      font-size: 1em;
+    }
+    .frac .num {
+      border-bottom: 2px solid #1e2b3a;
+      padding: 0 4px 2px 4px;
+    }
+    .frac .den {
+      padding: 2px 4px 0 4px;
+    }
+    .example {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 8px 10px;
+      margin: 6px 0;
+      border: 1px solid #e3e9f0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .example .step {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      margin: 3px 0;
+    }
+    .arrow {
+      color: #5b6f82;
+      font-weight: 300;
+      margin: 0 2px;
+    }
+    .game-area {
+      background: #f2f7fd;
+      border-radius: 20px;
+      padding: 14px 10px 16px;
+      margin-top: 14px;
+      border: 2px dashed #b6cdde;
+    }
+    .game-title {
+      font-weight: 600;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .game-title span {
+      font-size: 1.6rem;
+    }
+    .game-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px 10px;
+      margin: 8px 0;
+    }
+    .frac-input-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      padding: 8px 12px;
+      border-radius: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    .frac-input-group .frac {
+      font-size: 1.2rem;
+    }
+    .frac-input-group input {
+      width: 55px;
+      height: 48px;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      border: 2px solid #d4dce6;
+      border-radius: 10px;
+      background: white;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 0;
+    }
+    .frac-input-group input:focus {
+      border-color: #1e6f9f;
+      box-shadow: 0 0 0 3px rgba(30,111,159,0.15);
+    }
+    .frac-input-group .frac-symbol {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #2b4a5e;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 8px 0 4px;
+    }
+    .btn {
+      background: #1e2b3a;
+      border: none;
+      color: white;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.15s;
+      touch-action: manipulation;
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .btn:active {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
+    .btn-secondary {
+      background: #dce5ef;
+      color: #1a2a3a;
+    }
+    .feedback {
+      font-size: 1rem;
+      margin: 8px 0 4px;
+      min-height: 2.5rem;
+      padding: 8px 10px;
+      background: white;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      border: 1px solid #dbe1e9;
+      word-break: break-word;
+      text-align: center;
+    }
+    .feedback .emoji-big {
+      font-size: 1.4rem;
+    }
+    .score-badge {
+      background: #1e2b3a;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+    .footer-note {
+      margin-top: 14px;
+      text-align: center;
+      color: #4d637a;
+      border-top: 1px solid #e6edf5;
+      padding-top: 12px;
+      font-size: 0.85rem;
+    }
+    .reduction-block {
+      background: #f2f0e6;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 8px 0 4px;
+      border-left: 5px solid #b38b5b;
+    }
+    .reduction-block strong {
+      color: #7a5d32;
+    }
+    .tag {
+      background: #dce4ec;
+      border-radius: 30px;
+      padding: 2px 10px;
+      font-size: 0.8rem;
+      display: inline-block;
+    }
+    .example ul {
+      margin-left: 10px;
+      padding: 0;
+      list-style: none;
+    }
+    .example ul li {
+      margin: 2px 0;
+    }
+    .formula-box {
+      background: #e8f0f8;
+      border-radius: 12px;
+      padding: 8px 10px;
+      margin: 6px 0;
+      text-align: center;
+      font-size: 1.1rem;
+      border: 1px solid #c8d8e8;
+    }
+    @media (max-width: 550px) {
+      .lesson-card { padding: 8px 6px; }
+      h1 { font-size: 1.3rem; }
+      .section { padding: 8px 6px; }
+      .frac-input-group { padding: 6px 8px; gap: 4px; }
+      .frac-input-group input { width: 48px; height: 42px; font-size: 1.1rem; }
+      .frac-input-group .frac { font-size: 1rem; }
+      .frac-input-group .frac-symbol { font-size: 1.1rem; }
+      .btn { padding: 8px 16px; font-size: 0.85rem; min-height: 40px; }
+      .feedback { font-size: 0.9rem; min-height: 2.2rem; padding: 6px 8px; }
+      .example { font-size: 0.85rem; padding: 6px 6px; }
+      .formula-box { font-size: 0.95rem; padding: 6px 8px; }
+      .rule-box { padding: 6px 8px; }
+      .game-area { padding: 10px 6px 12px; }
+    }
+    @media (max-width: 400px) {
+      .frac-input-group input { width: 40px; height: 36px; font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="lesson-card">
+  <h1>
+    ➕ Сложение обыкновенных дробей
+    <small>просто и понятно</small>
+  </h1>
+
+  <!-- ТЕОРИЯ 1: одинаковые знаменатели -->
+  <div class="section">
+    <div class="section-title"><span>1</span> Одинаковые знаменатели</div>
+    <div class="rule-box">
+      <strong>Правило:</strong> Если знаменатели равны — <span class="highlight-blue">складываем числители</span>, а <span class="highlight-orange">знаменатель</span> оставляем.
+      <div style="margin-top: 8px; font-size: 1rem;">
+        <span class="frac"><span class="num">a</span><span class="den">c</span></span> + <span class="frac"><span class="num">b</span><span class="den">c</span></span> = <span class="frac"><span class="num" style="border-bottom-color: #005a8c;">a + b</span><span class="den" style="color:#a55400;">c</span></span>
+      </div>
+    </div>
+    <div class="example">
+      <div class="step"><span style="font-weight:500;">Пример:</span> 
+        <span class="frac"><span class="num">3</span><span class="den">7</span></span> + <span class="frac"><span class="num">2</span><span class="den">7</span></span> 
+        <span class="arrow">→</span> 
+        <span class="highlight-blue">3 + 2 = 5</span>, знаменатель <span class="highlight-orange">7</span> 
+        <span class="arrow">→</span> 
+        <span class="frac"><span class="num" style="border-bottom-color:#005a8c;">5</span><span class="den" style="color:#a55400;">7</span></span>
+      </div>
+    </div>
+    <div class="tag">💡 Складываем только верхние числа!</div>
+  </div>
+
+  <!-- ТЕОРИЯ 2: разные знаменатели -->
+  <div class="section">
+    <div class="section-title"><span>2</span> Разные знаменатели</div>
+    
+    <div class="formula-box">
+      <strong>📐 Формула:</strong><br>
+      <span class="frac"><span class="num">a</span><span class="den">b</span></span> + <span class="frac"><span class="num">c</span><span class="den">d</span></span> = <span class="frac"><span class="num" style="border-bottom-color:#005a8c;">a·d + c·b</span><span class="den" style="color:#a55400;">b·d</span></span>
+    </div>
+
+    <div class="rule-box">
+      <strong>Правило:</strong> Чтобы сложить дроби с разными знаменателями:
+      <div style="margin-top: 8px; background: #f3f7fa; border-radius: 12px; padding: 8px 10px; font-size: 0.95rem;">
+        <div><span class="highlight-green">❶</span> Найти <strong>общий знаменатель</strong></div>
+        <div><span class="highlight-green">❷</span> Найти <strong>дополнительные множители</strong></div>
+        <div><span class="highlight-green">❸</span> Умножить числители</div>
+        <div><span class="highlight-green">❹</span> Сложить числители</div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div style="font-weight:500; margin-bottom: 3px;">📘 Пример 1:</div>
+      <div class="step">
+        <span class="frac"><span class="num">2</span><span class="den">5</span></span> + <span class="frac"><span class="num">3</span><span class="den">10</span></span>
+      </div>
+      <div class="step">
+        <span class="highlight-green">Шаг 1:</span> Общий знаменатель — <strong>10</strong>
+      </div>
+      <div class="step">
+        <span class="highlight-green">Шаг 2:</span> Доп. множители:
+        <ul>
+          <li>• для <span class="frac"><span class="num">2</span><span class="den">5</span></span> <span class="arrow">→</span> 10÷5 <span class="arrow">→</span> <span class="highlight-blue">2</span></li>
+          <li>• для <span class="frac"><span class="num">3</span><span class="den">10</span></span> <span class="arrow">→</span> 10÷10 <span class="arrow">→</span> <span class="highlight-blue">1</span></li>
+        </ul>
+      </div>
+      <div class="step">
+        <span class="highlight-green">Шаг 3:</span> <span class="frac"><span class="num" style="border-bottom-color:#0a5e2b;">2×2=4</span><span class="den">10</span></span> + <span class="frac"><span class="num" style="border-bottom-color:#0a5e2b;">3×1=3</span><span class="den">10</span></span> = <span class="frac"><span class="num" style="border-bottom-color:#005a8c;">7</span><span class="den" style="color:#a55400;">10</span></span>
+      </div>
+      <div class="step" style="margin-top: 4px; background: #ecf5fa; border-radius: 20px; padding: 2px 10px;">
+        ✅ Ответ: <span class="frac"><span class="num">7</span><span class="den">10</span></span>
+      </div>
+    </div>
+
+    <div class="example">
+      <div style="font-weight:500; margin-bottom: 3px;">📘 Пример 2:</div>
+      <div class="step">
+        <span class="frac"><span class="num">1</span><span class="den">3</span></span> + <span class="frac"><span class="num">1</span><span class="den">6</span></span>
+      </div>
+      <div class="step">
+        <span class="highlight-green">Шаг 1:</span> Общий знаменатель — <strong>6</strong>
+      </div>
+      <div class="step">
+        <span class="highlight-green">Шаг 2:</span> Доп. множители: для ⅓ <span class="arrow">→</span> 6÷3 <span class="arrow">→</span> <span class="highlight-blue">2</span>; для ⅙ <span class="arrow">→</span> 6÷6 <span class="arrow">→</span> <span class="highlight-blue">1</span>
+      </div>
+      <div class="step">
+        <span class="highlight-green">Шаг 3:</span> <span class="frac"><span class="num" style="border-bottom-color:#0a5e2b;">2</span><span class="den">6</span></span> + <span class="frac"><span class="num" style="border-bottom-color:#0a5e2b;">1</span><span class="den">6</span></span> = <span class="frac"><span class="num" style="border-bottom-color:#005a8c;">3</span><span class="den" style="color:#a55400;">6</span></span>
+      </div>
+      <div class="step" style="margin-top: 4px; background: #ecf5fa; border-radius: 20px; padding: 2px 10px;">
+        ✅ Ответ: <span class="frac"><span class="num">3</span><span class="den">6</span></span> = <span class="frac"><span class="num">1</span><span class="den">2</span></span> (сократили)
+      </div>
+    </div>
+  </div>
+
+  <!-- БЛОК ПРО СОКРАЩЕНИЕ -->
+  <div class="section" style="background: #f9f7f0; border-color: #dcd3c0;">
+    <div class="section-title" style="font-size: 1.1rem;"><span>✂️</span> Сокращение дробей</div>
+    <div class="reduction-block">
+      <p><strong>Что значит «сократить дробь»?</strong> Разделить числитель и знаменатель на одно и то же число.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 8px 0 4px;">
+        <div>
+          <span style="font-weight:500;">Пример:</span> 
+          <span class="frac"><span class="num">4</span><span class="den">8</span></span> 
+          <span class="arrow">→</span> делим на 4 
+          <span class="arrow">→</span> 
+          <span class="frac"><span class="num">1</span><span class="den">2</span></span>
+        </div>
+        <div>
+          <span style="font-weight:500;">Ещё:</span> 
+          <span class="frac"><span class="num">6</span><span class="den">9</span></span> 
+          <span class="arrow">→</span> делим на 3 
+          <span class="arrow">→</span> 
+          <span class="frac"><span class="num">2</span><span class="den">3</span></span>
+        </div>
+      </div>
+      <div style="margin-top: 6px; background: #e8e3d6; border-radius: 20px; padding: 2px 12px; display: inline-block; font-size: 0.9rem;">
+        💡 Дробь сокращена, если не делится ни на что (кроме 1)
+      </div>
+    </div>
+    <div style="margin-top: 6px; font-size: 0.85rem; background: #eef3e9; border-radius: 20px; padding: 2px 12px; display: inline-block;">
+      ⚡ В игре вводи <strong>сокращённый</strong> ответ!
+    </div>
+  </div>
+
+  <!-- ИНТЕРАКТИВНАЯ ИГРА -->
+  <div class="game-area">
+    <div class="game-title"><span>🎮</span> Игра: сложи дроби</div>
+    <p style="margin-bottom: 6px; color: #1b3f57; font-size: 0.9rem;">Введи <strong>сокращённый</strong> ответ</p>
+
+    <div class="game-row" id="gameTask">
+      <!-- динамически заполняется из JS -->
+    </div>
+
+    <div class="btn-group">
+      <button class="btn" id="checkBtn">✔ Проверить</button>
+      <button class="btn btn-secondary" id="newTaskBtn">🎲 Новая дробь</button>
+    </div>
+
+    <div class="feedback" id="feedbackArea">
+      <span class="emoji-big">✨</span> Введи ответ и нажми «Проверить»
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 6px;">
+      <span class="score-badge" id="scoreDisplay">⭐ 0</span>
+    </div>
+  </div>
+  <div class="footer-note">
+    ✅ Сначала разбери правила, потом играй
+  </div>
+</div>
+<script>
+  (function() {
+    let currentTask = { a: 0, b: 0, c: 0, d: 0 };
+    let score = 0;
+    const scoreSpan = document.getElementById('scoreDisplay');
+    const taskContainer = document.getElementById('gameTask');
+    const feedback = document.getElementById('feedbackArea');
+
+    function gcd(a, b) {
+      a = Math.abs(a); b = Math.abs(b);
+      while (b) { [a, b] = [b, a % b]; }
+      return a;
+    }
+
+    function reduceFraction(num, den) {
+      if (den < 0) { num = -num; den = -den; }
+      if (num === 0) return [0, 1];
+      const g = gcd(Math.abs(num), den);
+      return [num / g, den / g];
+    }
+
+    function generateTask() {
+      const c = Math.floor(Math.random() * 6) + 2;
+      const d = Math.floor(Math.random() * 6) + 2;
+      const a = Math.floor(Math.random() * (c-1)) + 1;
+      const b = Math.floor(Math.random() * (d-1)) + 1;
+      return { a, b, c, d };
+    }
+
+    function renderTask(task) {
+      const { a, b, c, d } = task;
+      taskContainer.innerHTML = `
+        <div class="frac-input-group">
+          <span class="frac"><span class="num">${a}</span><span class="den">${c}</span></span>
+          <span class="frac-symbol">+</span>
+          <span class="frac"><span class="num">${b}</span><span class="den">${d}</span></span>
+          <span class="frac-symbol">=</span>
+          <span class="frac">
+            <span class="num"><input type="number" id="numAnswer" min="0" step="1" placeholder="?" value="" inputmode="numeric"></span>
+            <span class="den"><input type="number" id="denAnswer" min="1" step="1" placeholder="?" value="" inputmode="numeric"></span>
+          </span>
+        </div>
+      `;
+      setTimeout(() => {
+        const inpNum = document.getElementById('numAnswer');
+        if (inpNum) inpNum.focus();
+        const inpDen = document.getElementById('denAnswer');
+        if (inpDen) inpDen.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') checkAnswer();
+        });
+      }, 100);
+    }
+
+    function getCorrectAnswer(task) {
+      const { a, b, c, d } = task;
+      const lcm = (c * d) / gcd(c, d);
+      const newNum = a * (lcm / c) + b * (lcm / d);
+      return reduceFraction(newNum, lcm);
+    }
+
+    function updateScore() {
+      scoreSpan.textContent = `⭐ ${score}`;
+    }
+
+    function checkAnswer() {
+      const numInput = document.getElementById('numAnswer');
+      const denInput = document.getElementById('denAnswer');
+      if (!numInput || !denInput) {
+        feedback.innerHTML = `<span class="emoji-big">⚠️</span> Ошибка, обнови задание.`;
+        return;
+      }
+      const userNum = parseInt(numInput.value);
+      const userDen = parseInt(denInput.value);
+      if (isNaN(userNum) || isNaN(userDen) || userDen <= 0 || userNum < 0) {
+        feedback.innerHTML = `<span class="emoji-big">🧐</span> Введи числа: верх ≥ 0, низ > 0.`;
+        return;
+      }
+
+      const [rNum, rDen] = reduceFraction(userNum, userDen);
+      const [correctNum, correctDen] = getCorrectAnswer(currentTask);
+
+      if (rNum === correctNum && rDen === correctDen) {
+        score += 1;
+        updateScore();
+        feedback.innerHTML = `<span class="emoji-big">🎉</span> Верно! +1 балл. Отлично!`;
+        setTimeout(() => {
+          generateNewTask();
+        }, 1200);
+      } else {
+        feedback.innerHTML = `<span class="emoji-big">❌</span> Неверно. Правильный ответ: 
+          <span class="frac"><span class="num">${correctNum}</span><span class="den">${correctDen}</span></span>`;
+      }
+    }
+
+    function generateNewTask() {
+      currentTask = generateTask();
+      renderTask(currentTask);
+      feedback.innerHTML = `<span class="emoji-big">🧮</span> Введи сокращённый ответ.`;
+    }
+
+    function init() {
+      currentTask = generateTask();
+      renderTask(currentTask);
+      updateScore();
+
+      document.getElementById('checkBtn').addEventListener('click', checkAnswer);
+      document.getElementById('newTaskBtn').addEventListener('click', function() {
+        generateNewTask();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          const num = document.getElementById('numAnswer');
+          const den = document.getElementById('denAnswer');
+          if (num && den && (document.activeElement === num || document.activeElement === den)) {
+            e.preventDefault();
+            checkAnswer();
+          }
+        }
+      });
+    }
+
+    init();
+  })();
+</script>
+</body>
+</html>
