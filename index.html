@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Muslim Math • Уроки</title>
+  <title>MATH GIRL • Уроки</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -219,11 +219,11 @@
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.4rem;
       font-weight: 700;
       color: #4a2c3a;
       margin-bottom: 4px;
-      letter-spacing: -0.3px;
+      letter-spacing: 2px;
     }
 
     .subtitle {
@@ -243,6 +243,7 @@
     .card {
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       border-radius: 20px;
       padding: 18px 22px;
       border: 2px solid rgba(255, 255, 255, 0.5);
@@ -303,15 +304,14 @@
       color: #e91e63;
     }
 
-    /* 🎨 ЦВЕТОВАЯ СХЕМА РАЗДЕЛОВ */
-    .card-muslim { border-left: 5px solid #2e7d32; }
-    .card-muslim .card-icon { color: #2e7d32; }
+    .card-muslim { border-left: 5px solid #e91e63; }
+    .card-muslim .card-icon { color: #e91e63; }
 
-    .card-oge { border-left: 5px solid #e65100; }
-    .card-oge .card-icon { color: #e65100; }
+    .card-oge { border-left: 5px solid #8e24aa; }
+    .card-oge .card-icon { color: #8e24aa; }
 
-    .card-fractions { border-left: 5px solid #e91e63; }
-    .card-fractions .card-icon { color: #e91e63; }
+    .card-fractions { border-left: 5px solid #2e7d32; }
+    .card-fractions .card-icon { color: #2e7d32; }
 
     .card-coming {
       border-left: 5px solid #b0bec5;
@@ -324,25 +324,6 @@
     .card-coming .card-arrow { color: #b0bec5; }
     .card-coming:hover { transform: none; border-color: #b0bec5; box-shadow: none; }
 
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-top: 18px;
-    }
-
-    .badge {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(4px);
-      padding: 4px 14px;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      color: #4a2c3a;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      font-weight: 500;
-    }
-
     .footer-note {
       margin-top: 14px;
       color: #7a5a6a;
@@ -354,11 +335,12 @@
     @media (max-width: 550px) {
       body { padding: 14px 12px; }
       .container { padding: 18px 14px 24px; }
-      h1 { font-size: 1.6rem; }
+      h1 { font-size: 1.8rem; }
       .card { padding: 12px 14px; gap: 10px; }
       .card-icon { font-size: 1.6rem; width: 36px; }
       .card-title { font-size: 0.95rem; }
       .card-desc { font-size: 0.75rem; }
+      .emoji-big { font-size: 2.6rem; }
       .sun { width: 100px; height: 100px; top: -10px; right: -10px; }
       .rainbow { display: none; }
       .flower-1, .flower-2, .flower-3, .flower-4, .flower-5, .flower-6, .flower-7 { width: 50px; height: 50px; }
@@ -379,7 +361,7 @@
 </head>
 <body>
 
-  <!-- 🌸🌿 ФОН -->
+  <!-- 🌸🌿 ЛЕТНИЙ ФОН -->
   <div class="season-bg">
     <div class="sun"></div>
     <div class="rainbow"></div>
@@ -413,32 +395,29 @@
   <div class="container">
 
     <span class="emoji-big">🌸</span>
-    <h1>Muslim Math</h1>
+    <h1>MATH GIRL</h1>
     <p class="subtitle">Выбери направление ✨</p>
 
     <div class="cards">
 
-      <!-- 🕌 MUSLIM MATH -->
       <a href="muslim-math.html" class="card card-muslim">
         <span class="card-icon">🕌</span>
         <div class="card-content">
           <div class="card-title">Muslim Math</div>
-          <div class="card-desc">Риск, барака, садака, награда, закят, наследство</div>
+          <div class="card-desc">Математика Аллаха</div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
-      <!-- 📘 ОГЭ -->
       <a href="oge.html" class="card card-oge">
         <span class="card-icon">📘</span>
         <div class="card-content">
           <div class="card-title">ОГЭ</div>
-          <div class="card-desc">Что такое ОГЭ, баллы, задания, бланки, стратегия</div>
+          <div class="card-desc">Подготовка к экзамену</div>
         </div>
         <span class="card-arrow">→</span>
       </a>
 
-      <!-- 📖 ДРОБИ -->
       <a href="drobis.html" class="card card-fractions">
         <span class="card-icon">➗</span>
         <div class="card-content">
@@ -448,35 +427,19 @@
         <span class="card-arrow">→</span>
       </a>
 
-    </div>
-
-    <!-- 🔜 СКОРО ПОЯВИТСЯ -->
-    <div style="margin-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 18px;">
-      <p style="font-size: 0.9rem; color: #7a5a6a; margin-bottom: 12px; font-weight: 500;">🔜 Скоро появится</p>
-      <div class="cards" style="margin-top: 0;">
-
-        <div class="card card-coming">
-          <span class="card-icon">📐</span>
-          <div class="card-content">
-            <div class="card-title">Уравнения</div>
-            <div class="card-desc">Линейные, квадратные, системы уравнений</div>
-          </div>
-          <span class="card-arrow">⏳</span>
+      <div class="card card-coming">
+        <span class="card-icon">📐</span>
+        <div class="card-content">
+          <div class="card-title">Уравнения</div>
+          <div class="card-desc">Скоро появится…</div>
         </div>
-
+        <span class="card-arrow">⏳</span>
       </div>
-    </div>
 
-    <div class="badges">
-      <span class="badge">📚 3 раздела</span>
-      <span class="badge">🕌 Muslim Math</span>
-      <span class="badge">📘 ОГЭ</span>
-      <span class="badge">📱 на телефоне</span>
-      <span class="badge">🌸🌿 лето 2026</span>
     </div>
 
     <div class="footer-note">
-      🌸🌿 Учись с удовольствием и баракатом! 🤲
+      🌸 Учись с удовольствием и баракатом
     </div>
 
   </div>
