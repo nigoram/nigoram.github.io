@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Ризк • Muslim Math</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+      padding: 20px 16px;
+      background: linear-gradient(145deg, #0f2e1f 0%, #1a4a2f 40%, #2d5e3a 70%, #1f3d2a 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .islamic-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.08;
+    }
+
+    .islamic-bg::before {
+      content: '✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦';
+      position: absolute;
+      top: 5%;
+      left: 0;
+      width: 200%;
+      font-size: 3rem;
+      letter-spacing: 40px;
+      color: #d4a547;
+      white-space: nowrap;
+      animation: scrollOrnament 60s linear infinite;
+      opacity: 0.3;
+    }
+
+    .islamic-bg::after {
+      content: '۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞';
+      position: absolute;
+      bottom: 10%;
+      right: -50%;
+      font-size: 2.5rem;
+      letter-spacing: 30px;
+      color: #d4a547;
+      white-space: nowrap;
+      animation: scrollOrnamentReverse 70s linear infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes scrollOrnament {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes scrollOrnamentReverse {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50%); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      width: 100%;
+      background: rgba(255, 248, 235, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 40px;
+      padding: 35px 30px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(212, 165, 71, 0.05);
+      border: 1px solid rgba(212, 165, 71, 0.15);
+      transition: 0.3s;
+    }
+
+    .container::before {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4a547, transparent);
+      margin: 0 auto 20px;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #d4a547;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(212, 165, 71, 0.08);
+      border: 1px solid rgba(212, 165, 71, 0.1);
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(212, 165, 71, 0.15);
+      color: #f0d080;
+    }
+
+    .bismillah {
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      border-radius: 60px;
+      border: 1px solid rgba(212, 165, 71, 0.08);
+      background: rgba(212, 165, 71, 0.04);
+    }
+
+    .bismillah .arabic {
+      display: block;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #d4a547;
+      font-family: 'Traditional Arabic', 'Scheherazade', 'Amiri', serif;
+      letter-spacing: 2px;
+      line-height: 1.6;
+    }
+
+    .bismillah .transcription {
+      display: block;
+      font-size: 0.95rem;
+      color: #b8953a;
+      font-style: italic;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .emoji-big {
+      font-size: 2.6rem;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #f0e6c5;
+      margin-bottom: 6px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #c4b08a;
+      margin-bottom: 28px;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    .subtitle span {
+      color: #d4a547;
+      font-weight: 400;
+    }
+
+    .block {
+      background: rgba(255, 248, 235, 0.04);
+      border-radius: 20px;
+      padding: 20px 22px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(212, 165, 71, 0.08);
+      text-align: left;
+    }
+
+    .block-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #d4a547;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .block-title .icon {
+      font-size: 1.3rem;
+    }
+
+    .block p, .block li {
+      font-size: 1rem;
+      color: #ddd6c4;
+      line-height: 1.8;
+    }
+
+    .block p strong {
+      color: #f0e6c5;
+    }
+
+    .block ul {
+      padding-left: 20px;
+      margin: 6px 0;
+    }
+
+    .block ul li {
+      margin: 4px 0;
+    }
+
+    .block ul li strong {
+      color: #d4a547;
+    }
+
+    .quote-block {
+      background: rgba(212, 165, 71, 0.06);
+      border-left: 4px solid #d4a547;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 14px 0;
+      font-style: italic;
+      color: #e8ddc8;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .quote-block .source {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: #b8953a;
+      font-style: normal;
+      text-align: right;
+    }
+
+    .quote-block.ayah {
+      border-left-color: #b8953a;
+      background: rgba(212, 165, 71, 0.04);
+    }
+
+    .quote-block.hadith {
+      border-left-color: #d4a547;
+      background: rgba(212, 165, 71, 0.06);
+    }
+
+    .allah {
+      color: #d4a547;
+      font-weight: 600;
+    }
+
+    .prophet {
+      color: #e8ddc8;
+      font-weight: 500;
+    }
+
+    .fact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 12px 0;
+    }
+
+    .fact-item {
+      background: rgba(255, 248, 235, 0.04);
+      border-radius: 16px;
+      padding: 14px 16px;
+      border: 1px solid rgba(212, 165, 71, 0.06);
+      text-align: center;
+    }
+
+    .fact-item .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .fact-item .fact-text {
+      font-size: 0.9rem;
+      color: #ddd6c4;
+      line-height: 1.5;
+    }
+
+    .fact-item .fact-text strong {
+      color: #d4a547;
+    }
+
+    .fact-item.gold {
+      background: rgba(212, 165, 71, 0.04);
+      border: 1px solid rgba(212, 165, 71, 0.08);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: #7a8f7a;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(212, 165, 71, 0.06);
+      padding-top: 16px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 14px 12px; }
+      .container { padding: 20px 14px 26px; }
+      h1 { font-size: 1.7rem; }
+      .bismillah .arabic { font-size: 1.6rem; }
+      .bismillah .transcription { font-size: 0.8rem; }
+      .block { padding: 14px 14px; }
+      .block p, .block li { font-size: 0.92rem; }
+      .fact-grid { grid-template-columns: 1fr; }
+      .quote-block { font-size: 0.95rem; padding: 12px 14px; }
+      .subtitle { font-size: 0.9rem; }
+      .container::before { width: 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="islamic-bg"></div>
+
+  <div class="container">
+
+    <a href="index.html" class="back-link">← На главную</a>
+
+    <!-- Бисмиллях: арабский + транскрипция -->
+    <div class="bismillah">
+      <span class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
+      <span class="transcription">Бисмилляхи ррахмани ррахим</span>
+    </div>
+
+    <span class="emoji-big">🕌</span>
+    <h1>Ризк</h1>
+    <p class="subtitle">То, что Аллах дарует Своим рабам</p>
+
+    <!-- 1. ОПРЕДЕЛЕНИЕ РИЗКА -->
+    <div class="block">
+      <div class="block-title"><span class="icon">📖</span> Что такое ризк?</div>
+      <p>
+        В арабском языке слово <strong>«ризк» (الرزق)</strong> означает <strong>«всё то, чем можно воспользоваться и извлечь пользу»</strong>. Это не только еда, деньги или имущество. В шариатском смысле ризк включает в себя всё, что Аллах даровал Своим рабам: здоровье, знания, веру, спокойствие, возможность поклоняться, время, семью.
+      </p>
+      <p style="margin-top: 6px;">
+        Имам аль-Куртуби (да помилует его Аллах) сказал: <em>«Ризк — это всё, что приносит пользу»</em>.
+      </p>
+      <div class="quote-block ayah">
+        Аллах говорит в Коране: <br>
+        <em>«Нет на земле ни единого живого существа, которого Аллах не обеспечивал бы пропитанием (ризк)»</em>
+        <span class="source">(сура «Худ», 11:6)</span>
+      </div>
+      <p>
+        Этот аят — основа нашего понимания ризка. Он показывает, что забота о пропитании каждого творения лежит на <span class="allah">Всевышнем</span>.
+      </p>
+    </div>
+
+    <!-- 2. ВЕЛИЧИЕ АЛЛАХА В УПРАВЛЕНИИ РИЗКОМ -->
+    <div class="block">
+      <div class="block-title"><span class="icon">🌍</span> Величие Аллаха в управлении ризком всех творений</div>
+      <p>
+        Аллах не ограничивает Свой ризк только людьми. Он обеспечивает пропитанием <strong>каждое живое существо</strong> на земле, от огромного кита до мельчайшего муравья.
+      </p>
+
+      <div class="fact-grid">
+        <div class="fact-item">
+          <span class="emoji">🐋</span>
+          <div class="fact-text">
+            <strong>Кит</strong> — самое большое животное на планете. Он весит <strong>до 200 тонн</strong> и съедает <strong>около 4 тонн</strong> криля в день.
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="emoji">🌾</span>
+          <div class="fact-text">
+            Чтобы получить хлеб, нужны <strong>поля, дождь, солнце</strong>. Аллах управляет всем этим, чтобы на твоём столе была еда.
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="emoji">🐦</span>
+          <div class="fact-text">
+            Птицы, рыбы, олени — <strong>каждое животное</strong> находит свой ризк. Никто не остаётся голодным без ведома Аллаха.
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="emoji">🍯</span>
+          <div class="fact-text">
+            <strong>Пчёлы</strong> производят мёд, который является исцелением для людей. Аллах вдохновил их на это и обеспечивает их ризком даже в самых суровых условиях.
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-block hadith">
+        Пророк ﷺ сказал: <br>
+        <em>«Если бы вы уповали на Аллаха должным образом, Он дал бы вам удел, как даёт его птицам: они улетают голодными и возвращаются сытыми»</em>
+        <span class="source">(ат-Тирмизи)</span>
+      </div>
+    </div>
+
+    <!-- 3. ПРЕДОПРЕДЕЛЕНИЕ РИЗКА -->
+    <div class="block">
+      <div class="block-title"><span class="icon">📜</span> Предопределение ризка</div>
+      <p>
+        Одна из самых важных основ — то, что <strong>ризк каждого человека уже предопределён Аллахом</strong>. Это неотъемлемая часть веры в предопределение (кадар).
+      </p>
+      <div class="quote-block hadith">
+        Передаётся от Ибн Мас'уда (да будет доволен им Аллах), что Посланник Аллаха ﷺ сказал: <br>
+        <em>«…К зародышу отправляется ангел, который вдыхает в него дух. Одновременно с этим ангел получает веление записать четыре предопределения для этого создания: <strong>его удел (ризк), его жизненный срок (аджяль), его деяния и то, будет он счастливым или несчастным</strong>»</em>
+        <span class="source">(аль-Бухари, Муслим)</span>
+      </div>
+      <p>
+        <strong>Смысл этого хадиса:</strong><br>
+        Размер ризка и срок жизни <strong>неизменны</strong>. Никто не может ни увеличить, ни уменьшить то, что записано у Аллаха. Это вселяет в сердце верующего глубокое доверие к Аллаху и избавляет от тревоги о завтрашнем дне.
+      </p>
+      <p style="margin-top: 6px;">
+        Имам ан-Навави (да помилует его Аллах) в комментарии к этому хадису подчёркивал: <em>«В этом хадисе — одно из величайших оснований веры: убеждённость в предопределении и довольство решением Аллаха»</em>.
+      </p>
+    </div>
+
+    <!-- 4. РИЗК ХАЛЯЛЬ И ХАРАМ -->
+    <div class="block">
+      <div class="block-title"><span class="icon">⚖️</span> Ризк бывает халяль и харам</div>
+      <p>
+        Хотя размер ризка предопределён, его <strong>качество</strong> зависит от наших усилий и выбора. Аллах повелел Своим рабам стремиться к <strong>чистому, дозволенному ризку</strong>:
+      </p>
+      <div class="quote-block ayah">
+        <em>«О люди! Вкушайте на земле то, что является дозволенным (халяль) и чистым»</em>
+        <span class="source">(сура «аль-Бакара», 2:168)</span>
+      </div>
+      <div class="quote-block hadith">
+        Пророк ﷺ сказал: <br>
+        <em>«Поистине, Аллах — Благой и принимает только благое»</em>
+        <span class="source">(Муслим)</span>
+      </div>
+      <p>
+        <strong>Почему это важно?</strong><br>
+        Даже если человек много зарабатывает, но его доход содержит харам (например, проценты, обман, запретные товары), в этом ризке <strong>нет бараката</strong>. Такой доход не будет благословенным, а может стать причиной беспокойства, проблем и наказания в вечной жизни.
+      </p>
+      <p>
+        Имам Ибн Теймийя (да помилует его Аллах) говорил: <em>«Поистине, запретное (харам) не приносит бараката, даже если его много»</em>.
+      </p>
+    </div>
+
+    <!-- 5. СКРЫТЫЙ РИЗК: АФИЯ И ТАУФИК -->
+    <div class="block">
+      <div class="block-title"><span class="icon">🛡️</span> Скрытый ризк: «Афия» и «Тауфик»</div>
+      <p>
+        Мы привыкли считать ризком только то, что мы <strong>получили</strong>. Но ризком является и то, что Аллах <strong>уберег нас от получения</strong> — то есть от беды, болезни, потери.
+      </p>
+      <p>
+        В арабском языке это называется:
+      </p>
+      <ul>
+        <li><strong>«Афия» (العافية)</strong> — сохранность, здоровье, избавление от бед.</li>
+        <li><strong>«Тауфик» (التوفيق)</strong> — облегчение от Аллаха, когда Он помогает тебе избежать ошибок и трудностей.</li>
+      </ul>
+      <div class="quote-block hadith">
+        Пророк ﷺ учил нас: <br>
+        <em>«Просите у Аллаха афии, ибо после убеждённости в вере нет ничего лучше афии»</em>
+        <span class="source">(Тирмизи)</span>
+      </div>
+
+      <p style="margin-top: 10px;"><strong>Примеры скрытого ризка:</strong></p>
+      <ul>
+        <li>Ты <strong>не заболел</strong> в период эпидемии — это афия (сохранение здоровья, сил, средств на лечение).</li>
+        <li>Ты <strong>не попал в аварию</strong> — это сохранение жизни, здоровья, времени и денег на ремонт.</li>
+        <li>Твоя машина, дом или техника <strong>не сломались</strong> — это экономия средств и нервов.</li>
+        <li>Ты <strong>не столкнулся с обманом</strong> в делах — это сохранение имущества и чести.</li>
+      </ul>
+
+      <div class="fact-item gold" style="margin-top: 10px;">
+        <span class="emoji">🥔</span>
+        <div class="fact-text">
+          <strong>Кожура картофеля</strong> — удивительный пример скрытого ризка. Пока картофель в кожуре, он может лежать <strong>месяцами</strong>. Но стоит её снять — он портится <strong>в течение дня</strong>. Кожура — это защита, которую Аллах вложил в этот овощ, чтобы он хранился.
+        </div>
+      </div>
+      <p style="margin-top: 10px;">
+        <strong>Как это связано с нами?</strong><br>
+        Аллах тоже даёт нам «кожуру» — защиту от бед. Мы её не видим, но она нас оберегает. Мы не знаем, от скольких «порч» и болезней нас уберёг Аллах. И это — Его великая милость.
+      </p>
+      <div class="quote-block ayah">
+        <em>«Если вы будете благодарны, Я непременно приумножу вам (блага)»</em>
+        <span class="source">(сура «Ибрахим», 14:7)</span>
+      </div>
+    </div>
+
+    <!-- 6. ЗАКЛЮЧЕНИЕ: ПЕРЕХОД НА БАРАКАТ -->
+    <div class="block" style="border-left: 4px solid #d4a547;">
+      <div class="block-title"><span class="icon">💭</span> Размышление</div>
+      <p>
+        Мы узнали, что ризк предопределён, что он должен быть чистым, и что его частью является даже то, что Аллах уберёг от нас. Но остаётся один важный вопрос, который многие задают себе:
+      </p>
+      <p style="font-style: italic; color: #e8ddc8; margin: 10px 0;">
+        <em>«Почему у одних людей даже скромный достаток приносит удовлетворение, покой и ощущение полноты жизни, а у других — большие суммы не приносят счастья, а только добавляют тревог и забот?»</em>
+      </p>
+      <p style="font-style: italic; color: #e8ddc8; margin: 10px 0;">
+        <em>«Почему один человек тратит 1000 рублей и чувствует себя опустошённым, а другой с теми же 1000 рублями успевает и помочь другим, и закрыть свои нужды?»</em>
+      </p>
+      <p style="font-style: italic; color: #e8ddc8; margin: 10px 0;">
+        <em>«Почему одна семья живёт в достатке, но постоянно в долгах, а другая — с тем же доходом — чувствует себя свободной и обеспеченной?»</em>
+      </p>
+      <p style="margin-top: 12px; color: #f0e6c5;">
+        Разница не в сумме. Разница в том, что приходит вместе с ризком или не приходит. Это то, что в Исламе называют <strong style="color: #d4a547;">баракатом</strong>.
+      </p>
+    </div>
+
+    <div class="footer-note">
+      🌙 Изучай с пониманием и баракатом
+    </div>
+
+  </div>
+
+</body>
+</html>
