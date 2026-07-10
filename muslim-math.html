@@ -3,48 +3,348 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Muslim Math • Скоро</title>
+  <title>Muslim Math • Математика Аллаха</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      padding: 20px;
-      background: linear-gradient(145deg, #fce4ec, #c8e6c9);
-      text-align: center;
+      font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+      padding: 20px 16px;
+      background: linear-gradient(145deg, #0f2e1f 0%, #1a4a2f 40%, #2d5e3a 70%, #1f3d2a 100%);
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
     }
+
+    .islamic-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.08;
+    }
+
+    .islamic-bg::before {
+      content: '✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦';
+      position: absolute;
+      top: 5%;
+      left: 0;
+      width: 200%;
+      font-size: 3rem;
+      letter-spacing: 40px;
+      color: #d4a547;
+      white-space: nowrap;
+      animation: scrollOrnament 60s linear infinite;
+      opacity: 0.3;
+    }
+
+    .islamic-bg::after {
+      content: '۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞ ۞';
+      position: absolute;
+      bottom: 10%;
+      right: -50%;
+      font-size: 2.5rem;
+      letter-spacing: 30px;
+      color: #d4a547;
+      white-space: nowrap;
+      animation: scrollOrnamentReverse 70s linear infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes scrollOrnament {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes scrollOrnamentReverse {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50%); }
+    }
+
     .container {
-      max-width: 600px;
-      background: rgba(255,255,255,0.7);
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      width: 100%;
+      background: rgba(255, 248, 235, 0.08);
       backdrop-filter: blur(10px);
-      padding: 40px 30px;
+      -webkit-backdrop-filter: blur(10px);
       border-radius: 40px;
-      border: 1px solid rgba(255,255,255,0.5);
+      padding: 35px 30px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(212, 165, 71, 0.05);
+      border: 1px solid rgba(212, 165, 71, 0.15);
+      transition: 0.3s;
     }
-    .emoji-big { font-size: 4rem; display: block; margin-bottom: 16px; }
-    h1 { font-size: 2rem; color: #2e7d32; margin-bottom: 10px; }
-    p { font-size: 1.1rem; color: #4a2c3a; margin-bottom: 20px; }
+
+    .container::before {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4a547, transparent);
+      margin: 0 auto 20px;
+      border-radius: 10px;
+    }
+
     .back-link {
       display: inline-block;
-      padding: 10px 28px;
-      background: #2e7d32;
-      color: white;
-      border-radius: 30px;
+      margin-bottom: 16px;
+      color: #d4a547;
       text-decoration: none;
+      font-size: 0.9rem;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(212, 165, 71, 0.08);
+      border: 1px solid rgba(212, 165, 71, 0.1);
       transition: 0.2s;
     }
-    .back-link:hover { background: #1b5e20; transform: scale(1.02); }
+
+    .back-link:hover {
+      background: rgba(212, 165, 71, 0.15);
+      color: #f0d080;
+    }
+
+    .bismillah {
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      border-radius: 60px;
+      border: 1px solid rgba(212, 165, 71, 0.08);
+      background: rgba(212, 165, 71, 0.04);
+    }
+
+    .bismillah .arabic {
+      display: block;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #d4a547;
+      font-family: 'Traditional Arabic', 'Scheherazade', 'Amiri', serif;
+      letter-spacing: 2px;
+      line-height: 1.6;
+    }
+
+    .bismillah .transcription {
+      display: block;
+      font-size: 0.95rem;
+      color: #b8953a;
+      font-style: italic;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .emoji-big {
+      font-size: 3rem;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #f0e6c5;
+      margin-bottom: 4px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .subtitle-main {
+      font-size: 1.1rem;
+      color: #d4a547;
+      margin-bottom: 16px;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: #c4b08a;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+      border-bottom: 1px solid rgba(212, 165, 71, 0.06);
+      padding-bottom: 20px;
+    }
+
+    .description strong {
+      color: #f0e6c5;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 10px 0 20px;
+    }
+
+    .card {
+      background: rgba(255, 248, 235, 0.04);
+      border-radius: 18px;
+      padding: 18px 22px;
+      border: 1px solid rgba(212, 165, 71, 0.08);
+      transition: 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: #ddd6c4;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #d4a547;
+      background: rgba(212, 165, 71, 0.06);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:active {
+      transform: scale(0.98);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      width: 48px;
+      text-align: center;
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #f0e6c5;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: #b8953a;
+      margin-top: 2px;
+    }
+
+    .card-arrow {
+      color: #7a8f7a;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      flex-shrink: 0;
+    }
+
+    .card:hover .card-arrow {
+      transform: translateX(4px);
+      color: #d4a547;
+    }
+
+    .card-coming {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .card-coming:hover {
+      transform: none;
+      border-color: rgba(212, 165, 71, 0.08);
+      background: rgba(255, 248, 235, 0.04);
+      box-shadow: none;
+    }
+
+    .card-coming .card-arrow {
+      color: #4a5a4a;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: #7a8f7a;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(212, 165, 71, 0.06);
+      padding-top: 16px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 14px 12px; }
+      .container { padding: 20px 14px 26px; }
+      h1 { font-size: 1.8rem; }
+      .bismillah .arabic { font-size: 1.5rem; }
+      .bismillah .transcription { font-size: 0.8rem; }
+      .card { padding: 14px 16px; gap: 12px; }
+      .card-icon { font-size: 1.6rem; width: 40px; }
+      .card-title { font-size: 1rem; }
+      .subtitle-main { font-size: 0.95rem; }
+      .description { font-size: 0.9rem; }
+      .container::before { width: 50px; }
+    }
   </style>
 </head>
 <body>
+
+  <div class="islamic-bg"></div>
+
   <div class="container">
+
+    <a href="index.html" class="back-link">← На главную</a>
+
+    <div class="bismillah">
+      <span class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
+      <span class="transcription">Бисмилляхи ррахмани ррахим</span>
+    </div>
+
     <span class="emoji-big">🕌</span>
     <h1>Muslim Math</h1>
-    <p>Страница в разработке. Здесь будут уроки про риск, барака, садака, награду, закят и наследство.</p>
-    <a href="index.html" class="back-link">← На главную</a>
+    <p class="subtitle-main">Математика Аллаха</p>
+
+    <p class="description">
+      Здесь мы говорим о том, как устроен этот мир с точки зрения Всевышнего.
+      <br>
+      Земная математика считает: 1 + 1 = 2. Но <strong>Математика Аллаха</strong> устроена иначе.
+      В ней садака умножает твои деньги, баракат делает малое — большим, а награда за доброе дело может быть в 700 раз больше.
+      <br><br>
+      <span style="color: #d4a547;">Этот раздел о том, как устроен наш мир на самом деле.</span>
+    </p>
+
+    <div class="cards">
+
+      <!-- Ризк — активная ссылка -->
+      <a href="rizk.html" class="card">
+        <span class="card-icon">🌾</span>
+        <div class="card-content">
+          <div class="card-title">Ризк</div>
+          <div class="card-desc">Что такое ризк, предопределение, халяль, скрытый ризк</div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <!-- Баракат — пока заглушка (скоро появится) -->
+      <div class="card card-coming">
+        <span class="card-icon">🌿</span>
+        <div class="card-content">
+          <div class="card-title">Баракат</div>
+          <div class="card-desc">Скоро появится</div>
+        </div>
+        <span class="card-arrow">⏳</span>
+      </div>
+
+    </div>
+
+    <div class="footer-note">
+      🌙 Изучай с пониманием и баракатом
+    </div>
+
   </div>
+
 </body>
 </html>
