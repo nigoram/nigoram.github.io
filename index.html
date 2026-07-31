@@ -84,6 +84,30 @@
             box-shadow: 0 8px 30px rgba(232, 141, 74, 0.55);
         }
 
+        .btn-outline-bright {
+            display: inline-block;
+            background: transparent;
+            color: #e88d4a;
+            padding: 16px 40px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+            border: 2px solid #e88d4a;
+            cursor: pointer;
+        }
+
+        .btn-outline-bright:hover {
+            background: #e88d4a;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-bright i {
+            margin-right: 8px;
+        }
+
         /* ===== НАВИГАЦИЯ ===== */
         .navbar {
             padding: 16px 0;
@@ -584,6 +608,13 @@
             margin-right: 8px;
         }
 
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
         /* ===== ФУТЕР ===== */
         .footer-soft {
             background: #1e2a4a;
@@ -661,6 +692,16 @@
             .quote-section blockquote {
                 font-size: 1rem;
                 padding: 16px 20px;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-buttons .btn,
+            .cta-buttons .btn-outline-bright {
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
             }
         }
 
@@ -741,7 +782,7 @@
             <div class="problems-grid">
                 <div class="problem-card">
                     <div class="emoji">🎯</div>
-                    <h4>Экзамен вызывает страх и панику</h4>
+                    <h4>ОГЭ вызывает страх и панику</h4>
                     <p>Мы спокойно проходим всю теорию, необходимую для решения заданий, и отрабатываем её на практике. Без спешки и стресса — чтобы к экзамену прийти с уверенностью.</p>
                 </div>
                 <div class="problem-card">
@@ -763,8 +804,8 @@
         <div class="container">
             <h2>Обо мне</h2>
             <p class="intro">
-                Меня зовут <strong>Нигора</strong>. Я репетитор по математике и выпускница РУДН по специальности «Прикладная математика и информатика». 
-                Люблю математику и умею объяснять её по-человечески — без заумных формулировок, с логикой и живыми примерами. 
+                Меня зовут <strong>Нигора</strong>. Я репетитор по математике и выпускница РУДН по специальности «Прикладная математика и информатика».
+                Люблю математику и умею объяснять её по-человечески — без заумных формулировок, с логикой и живыми примерами.
                 Для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте, поэтому я работаю только с девушками.
             </p>
             <div class="about-grid-soft">
@@ -859,14 +900,14 @@
             <div class="price-wrap">
                 <div class="price-block">
                     <h3>60 минут</h3>
-                    <div class="time-label">1 200 ₽ / занятие</div>
+                    <div class="time-label">стандартный урок</div>
                     <div class="price-row"><span class="package">4 занятия</span><span class="cost">4 800 ₽</span></div>
                     <div class="price-row"><span class="package">8 занятий</span><span class="cost">9 600 ₽</span></div>
                     <div class="price-row"><span class="package">12 занятий</span><span class="cost">14 400 ₽</span></div>
                 </div>
                 <div class="price-block">
                     <h3>90 минут</h3>
-                    <div class="time-label">1 500 ₽ / занятие</div>
+                    <div class="time-label">углубленный урок</div>
                     <div class="price-row"><span class="package">4 занятия</span><span class="cost">6 000 ₽</span></div>
                     <div class="price-row"><span class="package">8 занятий</span><span class="cost">12 000 ₽</span></div>
                     <div class="price-row"><span class="package">12 занятий</span><span class="cost">18 000 ₽</span></div>
@@ -892,9 +933,14 @@
                 <p><i class="fas fa-check-circle"></i> Знакомство и диагностика знаний</p>
                 <p><i class="fas fa-check-circle"></i> Первые советы и план работы</p>
             </div>
-            <a href="https://t.me/nigoram27" target="_blank" class="btn btn-bright">
-                <i class="fab fa-telegram-plane"></i> Написать в Telegram
-            </a>
+            <div class="cta-buttons">
+                <a href="https://t.me/nigoram27" target="_blank" class="btn btn-bright">
+                    <i class="fab fa-telegram-plane"></i> Написать в Telegram
+                </a>
+                <a href="https://vk.ru/nigoram1" target="_blank" class="btn-outline-bright">
+                    <i class="fab fa-vk"></i> Написать в VK
+                </a>
+            </div>
         </div>
     </section>
 
