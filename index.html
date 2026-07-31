@@ -233,16 +233,22 @@
             aspect-ratio: 1/1;
         }
 
-        /* ===== ПРОБЛЕМЫ ===== */
+        /* ===== ПРОБЛЕМЫ (НОВОЕ НАЧАЛО) ===== */
         .problems {
             background: #ffffff;
         }
 
         .problems .intro-text {
-            max-width: 680px;
+            max-width: 700px;
             color: #4a433c;
             margin-bottom: 30px;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .problems .intro-text strong {
+            color: #1e3a5f;
+            font-weight: 600;
         }
 
         .problems-grid {
@@ -280,21 +286,26 @@
             font-size: 0.92rem;
         }
 
-        /* ===== ОБО МНЕ ===== */
+        /* ===== ОБО МНЕ (НОВЫЙ ТЕКСТ) ===== */
         .about-soft {
             background: #faf6f1;
         }
 
-        .about-soft .intro {
-            font-size: 1.1rem;
+        .about-soft .intro-text {
+            max-width: 720px;
             color: #4a433c;
-            max-width: 700px;
+            font-size: 1.05rem;
             margin-bottom: 10px;
         }
 
-        .about-soft .intro strong {
+        .about-soft .intro-text strong {
             color: #1e3a5f;
             font-weight: 600;
+        }
+
+        .about-soft .intro-text .highlight {
+            color: #1e3a5f;
+            font-weight: 500;
         }
 
         .about-grid-soft {
@@ -552,6 +563,32 @@
             margin-right: 4px;
         }
 
+        /* ===== СКИДКИ ===== */
+        .discounts {
+            margin-top: 20px;
+            padding: 18px 24px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e8e0d8;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 30px;
+        }
+
+        .discounts .discount-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #1e2a4a;
+            font-weight: 500;
+        }
+
+        .discounts .discount-item i {
+            color: #e88d4a;
+            font-size: 1.1rem;
+        }
+
         .trial-block {
             background: #ffffff;
             border-radius: 20px;
@@ -703,6 +740,11 @@
                 max-width: 320px;
                 text-align: center;
             }
+            .discounts {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -775,10 +817,12 @@
         </div>
     </section>
 
-    <!-- ===== ПРОБЛЕМЫ ===== -->
+    <!-- ===== ПРОБЛЕМЫ (НОВОЕ НАЧАЛО) ===== -->
     <section class="section problems" id="problems">
         <div class="container">
-            <p class="intro-text">Вот с чем я помогаю справиться:</p>
+            <p class="intro-text">
+                <strong>Если у вашего ребенка:</strong>
+            </p>
             <div class="problems-grid">
                 <div class="problem-card">
                     <div class="emoji">🎯</div>
@@ -796,18 +840,21 @@
                     <p>Накопились пробелы, каждая новая тема даётся тяжело, а в школе объясняют непонятно. Я помогу разобраться с самого начала, объясню через логику и примеры — так, чтобы математика перестала быть страшной.</p>
                 </div>
             </div>
+            <p style="margin-top:24px;font-size:1.05rem;color:#4a433c;font-weight:500;">
+                <strong>— то вам ко мне.</strong>
+            </p>
         </div>
     </section>
 
-    <!-- ===== ОБО МНЕ ===== -->
+    <!-- ===== ОБО МНЕ (НОВЫЙ ТЕКСТ) ===== -->
     <section class="section about-soft" id="about">
         <div class="container">
             <h2>Обо мне</h2>
-            <p class="intro">
-                Меня зовут <strong>Нигора</strong>. Я репетитор по математике и выпускница РУДН по специальности «Прикладная математика и информатика».
-                Люблю математику и умею объяснять её по-человечески — без заумных формулировок, с логикой и живыми примерами.
-                Для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте, поэтому я работаю только с девушками.
-            </p>
+            <div class="intro-text">
+                <p><strong>Выпускница РУДН</strong> по специальности «Прикладная математика и информатика».</p>
+                <p style="margin-top:8px;">Люблю математику и умею объяснять её по-человечески — без заумных формулировок, с логикой и живыми примерами.</p>
+                <p style="margin-top:8px;">Для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте, поэтому я работаю <span class="highlight">только с девушками</span>.</p>
+            </div>
             <div class="about-grid-soft">
                 <div class="about-card-soft">
                     <div class="icon-circle"><i class="fas fa-hand-holding-heart"></i></div>
@@ -911,6 +958,16 @@
                     <div class="price-row"><span class="package">4 занятия</span><span class="cost">6 000 ₽</span></div>
                     <div class="price-row"><span class="package">8 занятий</span><span class="cost">12 000 ₽</span></div>
                     <div class="price-row"><span class="package">12 занятий</span><span class="cost">18 000 ₽</span></div>
+                </div>
+            </div>
+
+            <!-- ===== СКИДКИ ===== -->
+            <div class="discounts">
+                <div class="discount-item">
+                    <i class="fas fa-gift"></i> 10% скидка за любой пакет занятий многодетным семьям
+                </div>
+                <div class="discount-item">
+                    <i class="fas fa-gift"></i> 10% скидка, если будут заниматься двое детей из одной семьи
                 </div>
             </div>
 
