@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Нигора — репетитор по математике для девочек</title>
+    <title>Нигора — репетитор по математике для девушек</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
@@ -69,6 +69,22 @@
             margin-right: 8px;
         }
 
+        /* ===== ЯРКАЯ КНОПКА ДЛЯ ПРОБНОГО ===== */
+        .btn-bright {
+            background: #e88d4a;
+            box-shadow: 0 6px 24px rgba(232, 141, 74, 0.45);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 18px 48px;
+        }
+
+        .btn-bright:hover {
+            background: #d47a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(232, 141, 74, 0.55);
+        }
+
         /* ===== НАВИГАЦИЯ ===== */
         .navbar {
             padding: 16px 0;
@@ -116,9 +132,9 @@
             color: #1e3a5f;
         }
 
-        /* ===== ГЛАВНАЯ ===== */
+        /* ===== ГЛАВНАЯ (НОВАЯ ВЕРСИЯ) ===== */
         .hero {
-            padding: 50px 0 70px;
+            padding: 40px 0 60px;
             background: linear-gradient(145deg, #faf6f1 0%, #f0e8df 100%);
         }
 
@@ -133,41 +149,51 @@
             flex: 1 1 400px;
         }
 
-        .hero-text .badge {
-            display: inline-block;
-            background: #1e3a5f;
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 16px;
-            border-radius: 60px;
-            letter-spacing: 0.3px;
-            margin-bottom: 14px;
-        }
-
         .hero-text h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 8px;
+            font-size: 3.4rem;
+            line-height: 1.1;
             color: #1e2a4a;
+            font-weight: 600;
+            margin-bottom: 4px;
         }
 
-        .hero-text h1 span {
+        .hero-text .subtitle {
+            font-size: 1.6rem;
+            font-weight: 500;
             color: #1e3a5f;
+            margin-bottom: 2px;
         }
 
-        .hero-text .sub {
-            font-size: 1.2rem;
-            color: #5f5549;
-            margin-bottom: 10px;
+        .hero-text .for-whom {
+            font-size: 1.1rem;
+            color: #8a7b6b;
             font-weight: 400;
+            margin-bottom: 24px;
         }
 
-        .hero-text .desc {
-            font-size: 1rem;
-            color: #5f5549;
-            max-width: 460px;
-            margin-bottom: 28px;
+        .hero-icons {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icons .icon-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            padding: 8px 20px 8px 16px;
+            border-radius: 60px;
+            border: 1px solid #e8e0d8;
+            font-weight: 500;
+            color: #1e2a4a;
+            font-size: 0.95rem;
+        }
+
+        .hero-icons .icon-item i {
+            color: #1e3a5f;
+            font-size: 1.1rem;
         }
 
         .hero-image {
@@ -184,9 +210,60 @@
             aspect-ratio: 1/1;
         }
 
+        /* ===== ПРОБЛЕМЫ УЧЕНИЦ (вместо Родителям) ===== */
+        .problems {
+            background: #ffffff;
+        }
+
+        .problems h2 {
+            color: #1e2a4a;
+        }
+
+        .problems .intro-text {
+            max-width: 680px;
+            color: #4a433c;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .problem-card {
+            background: #faf6f1;
+            padding: 22px 20px;
+            border-radius: 20px;
+            border: 1px solid #e8e0d8;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        .problem-card:hover {
+            border-color: #1e3a5f;
+            box-shadow: 0 6px 20px -8px rgba(30, 58, 95, 0.06);
+        }
+
+        .problem-card .emoji {
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+        }
+
+        .problem-card h4 {
+            color: #1e2a4a;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .problem-card p {
+            color: #5f5549;
+            font-size: 0.92rem;
+        }
+
         /* ===== ОБО МНЕ ===== */
         .about-soft {
-            background: #ffffff;
+            background: #faf6f1;
         }
 
         .about-soft h2 {
@@ -197,7 +274,7 @@
             font-size: 1.1rem;
             color: #4a433c;
             max-width: 700px;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
 
         .about-soft .intro strong {
@@ -214,7 +291,7 @@
 
         .about-card-soft {
             flex: 1 1 200px;
-            background: #faf6f1;
+            background: #ffffff;
             padding: 24px 22px;
             border-radius: 24px;
             border: 1px solid #e8e0d8;
@@ -250,23 +327,132 @@
             color: #5f5549;
         }
 
-        .about-signature {
-            margin-top: 20px;
+        /* ===== КАК ПРОХОДЯТ ЗАНЯТИЯ ===== */
+        .format-section {
+            background: #ffffff;
+        }
+
+        .format-section h2 {
+            color: #1e2a4a;
+        }
+
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        .format-card {
+            background: #faf6f1;
+            padding: 24px 22px;
+            border-radius: 20px;
+            border: 1px solid #e8e0d8;
+            transition: border 0.2s;
+        }
+
+        .format-card:hover {
+            border-color: #1e3a5f;
+        }
+
+        .format-card h4 {
+            color: #1e2a4a;
             font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .format-card p {
+            color: #5f5549;
+            font-size: 0.92rem;
+        }
+
+        .format-card .tag {
+            display: inline-block;
+            background: #e8e0d8;
             color: #4a433c;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 12px;
+            border-radius: 60px;
+            margin-top: 6px;
+        }
+
+        .format-note {
+            margin-top: 24px;
             background: #faf6f1;
             padding: 16px 24px;
             border-radius: 20px;
             border-left: 4px solid #1e3a5f;
-            max-width: 680px;
+            color: #4a433c;
         }
 
-        .about-signature i {
+        .format-note i {
             color: #1e3a5f;
             margin-right: 8px;
         }
 
-        /* ===== УСЛУГИ ===== */
+        /* ===== ЦИТАТА ===== */
+        .quote-section {
+            background: #faf6f1;
+            padding: 50px 0;
+        }
+
+        .quote-section .container {
+            max-width: 800px;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #2d2a24;
+            line-height: 1.8;
+            font-style: italic;
+            padding: 20px 28px;
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e8e0d8;
+        }
+
+        .quote-section blockquote::before {
+            content: '\201C';
+            font-size: 3rem;
+            color: #1e3a5f;
+            font-style: normal;
+            line-height: 0.5;
+            display: block;
+        }
+
+        /* ===== ТРЕБОВАНИЯ ===== */
+        .requirements {
+            background: #ffffff;
+        }
+
+        .requirements h2 {
+            color: #1e2a4a;
+        }
+
+        .requirements-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            margin-top: 6px;
+        }
+
+        .requirements-grid .req-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            color: #1e2a4a;
+            font-weight: 500;
+        }
+
+        .requirements-grid .req-item i {
+            color: #1e3a5f;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ЦЕНЫ ===== */
         .price-section {
             background: #faf6f1;
         }
@@ -279,11 +465,6 @@
             max-width: 680px;
             margin-bottom: 30px;
             color: #4a433c;
-        }
-
-        .price-intro-soft i {
-            color: #1e3a5f;
-            margin-right: 4px;
         }
 
         .price-wrap {
@@ -348,7 +529,7 @@
         }
 
         .trial-block .label {
-            background: #1e3a5f;
+            background: #e88d4a;
             color: #fff;
             font-weight: 600;
             padding: 2px 14px;
@@ -360,109 +541,21 @@
             color: #4a433c;
         }
 
-        /* ===== ДЛЯ РОДИТЕЛЕЙ ===== */
-        .parent-soft {
+        /* ===== ЗАПИСЬ НА ПРОБНЫЙ ===== */
+        .cta-section {
             background: #ffffff;
-        }
-
-        .parent-soft h2 {
-            color: #1e2a4a;
-        }
-
-        .parent-grid-soft {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .parent-item-soft {
-            padding: 24px 20px;
-            background: #faf6f1;
-            border-radius: 20px;
-            border: 1px solid #e8e0d8;
-            transition: border 0.2s;
-        }
-
-        .parent-item-soft:hover {
-            border-color: #1e3a5f;
-        }
-
-        .parent-item-soft .emoji-big {
-            font-size: 2rem;
-            margin-bottom: 6px;
-        }
-
-        .parent-item-soft h4 {
-            font-size: 1.05rem;
-            margin-bottom: 4px;
-            color: #1e2a4a;
-        }
-
-        .parent-item-soft p {
-            color: #5f5549;
-            font-size: 0.95rem;
-        }
-
-        /* ===== КОНТАКТЫ ===== */
-        .contacts-soft {
-            background: #faf6f1;
-        }
-
-        .contacts-soft h2 {
-            color: #1e2a4a;
-        }
-
-        .steps-soft {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-between;
-            margin: 20px 0 30px;
-        }
-
-        .step-soft {
-            flex: 1 1 160px;
             text-align: center;
+            padding: 50px 0;
         }
 
-        .step-soft .num-circle {
-            background: #1e3a5f;
-            color: #fff;
-            width: 44px;
-            height: 44px;
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin: 0 auto 10px;
-        }
-
-        .step-soft h4 {
-            font-size: 1rem;
+        .cta-section h2 {
             color: #1e2a4a;
         }
 
-        .step-soft p {
+        .cta-section p {
             color: #5f5549;
-            font-size: 0.9rem;
-        }
-
-        .contact-telegram {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .contact-address {
-            margin-top: 16px;
-            color: #5f5549;
-            font-size: 0.95rem;
-        }
-
-        .contact-address i {
-            color: #1e3a5f;
-            margin-right: 6px;
+            max-width: 500px;
+            margin: 0 auto 28px;
         }
 
         /* ===== ФУТЕР ===== */
@@ -475,8 +568,9 @@
         .footer-soft .container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 24px;
+            justify-content: center;
+            gap: 40px;
+            text-align: center;
         }
 
         .footer-soft .col h4 {
@@ -489,7 +583,7 @@
         .footer-soft .col p,
         .footer-soft .col a {
             color: #b8a99a;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-decoration: none;
         }
 
@@ -498,7 +592,7 @@
         }
 
         .footer-soft .col i {
-            width: 20px;
+            width: 24px;
             color: #8a7b6b;
         }
 
@@ -514,15 +608,17 @@
                 gap: 14px 20px;
             }
             .hero-text h1 {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
+            }
+            .hero-text .subtitle {
+                font-size: 1.3rem;
             }
             .hero .container {
                 flex-direction: column-reverse;
                 text-align: center;
             }
-            .hero-text .desc {
-                margin-left: auto;
-                margin-right: auto;
+            .hero-icons {
+                justify-content: center;
             }
             .about-grid-soft {
                 flex-direction: column;
@@ -530,16 +626,9 @@
             .price-wrap {
                 flex-direction: column;
             }
-            .steps-soft {
-                flex-direction: column;
-                align-items: center;
-            }
-            .step-soft {
-                max-width: 240px;
-            }
             .footer-soft .container {
                 flex-direction: column;
-                text-align: center;
+                gap: 20px;
             }
             .section {
                 padding: 40px 0;
@@ -547,17 +636,21 @@
             h2 {
                 font-size: 1.7rem;
             }
-            .about-signature {
-                font-size: 0.95rem;
-            }
             .hero-image img {
                 max-width: 220px;
+            }
+            .quote-section blockquote {
+                font-size: 1rem;
+                padding: 16px 20px;
             }
         }
 
         @media (max-width: 480px) {
             .hero-text h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            .hero-text .subtitle {
+                font-size: 1.1rem;
             }
             .btn {
                 padding: 14px 24px;
@@ -571,6 +664,13 @@
             .hero-image img {
                 max-width: 180px;
             }
+            .hero-icons .icon-item {
+                font-size: 0.8rem;
+                padding: 6px 14px 6px 12px;
+            }
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -581,10 +681,11 @@
         <div class="container">
             <div class="logo">Нигора<span>Math</span></div>
             <ul class="nav-links">
+                <li><a href="#problems"><i class="fas fa-lightbulb" style="color:#1e3a5f;"></i> Проблемы</a></li>
                 <li><a href="#about"><i class="fas fa-heart" style="color:#1e3a5f;"></i> Обо мне</a></li>
-                <li><a href="#prices"><i class="fas fa-tag"></i> Услуги</a></li>
-                <li><a href="#parents"><i class="fas fa-users"></i> Родителям</a></li>
-                <li><a href="#contacts"><i class="fas fa-paper-plane"></i> Контакты</a></li>
+                <li><a href="#format"><i class="fas fa-video"></i> Формат</a></li>
+                <li><a href="#prices"><i class="fas fa-tag"></i> Цены</a></li>
+                <li><a href="#cta"><i class="fas fa-paper-plane"></i> Запись</a></li>
             </ul>
         </div>
     </nav>
@@ -593,14 +694,17 @@
     <section class="hero">
         <div class="container">
             <div class="hero-text">
-                <div class="badge"><i class="fas fa-star"></i> Бесплатный пробный урок</div>
-                <h1>Нигора.<br /><span>Математика</span> для девочек</h1>
-                <p class="sub">Нежно, но с дисциплиной. С душой и заботой.</p>
-                <p class="desc">
-                    5–9 класс. Подготовка к ОГЭ, ВПР, повышение успеваемости.
-                    <br/>Онлайн и очно в Балашихе.
-                </p>
-                <a href="#contacts" class="btn"><i class="fas fa-paper-plane"></i> Записаться на пробный урок</a>
+                <h1>Нигора</h1>
+                <p class="subtitle">Репетитор по математике</p>
+                <p class="for-whom">для девушек 5–9 классов</p>
+
+                <div class="hero-icons">
+                    <span class="icon-item"><i class="fas fa-check-circle"></i> ОГЭ</span>
+                    <span class="icon-item"><i class="fas fa-check-circle"></i> ВПР</span>
+                    <span class="icon-item"><i class="fas fa-check-circle"></i> Повышение успеваемости</span>
+                </div>
+
+                <a href="#cta" class="btn btn-bright"><i class="fas fa-paper-plane"></i> Записаться на пробный урок</a>
             </div>
             <div class="hero-image">
                 <img src="photo_2026-07-12_17-24-54.jpg" alt="Нигора" />
@@ -608,12 +712,47 @@
         </div>
     </section>
 
+    <!-- ===== ПРОБЛЕМЫ УЧЕНИЦ ===== -->
+    <section class="section problems" id="problems">
+        <div class="container">
+            <h2>С чем я работаю</h2>
+            <p class="intro-text">Я знаю, с какими трудностями сталкиваются девушки в 5–9 классе. Вот что я помогаю решить:</p>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="emoji">📉</div>
+                    <h4>Двойки и пробелы</h4>
+                    <p>Ребенок перестал успевать, накопились пробелы, и каждая новая тема даётся тяжелее. Я помогу разобраться с начала и закрыть все слабые места.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="emoji">😰</div>
+                    <h4>Страх контрольных</h4>
+                    <p>Девочка знает тему, но на контрольной теряется, делает глупые ошибки и получает низкие баллы. Работаем над уверенностью и внимательностью.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="emoji">🧩</div>
+                    <h4>«Я ничего не понимаю»</h4>
+                    <p>Учитель в школе объясняет сложно, а в учебнике написано непонятно. Нужен другой голос, другой подход — чтобы математика стала логичной и простой.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="emoji">⏳</div>
+                    <h4>Не успевает за программой</h4>
+                    <p>Класс идёт быстро, а девочка не успевает усваивать материал. Нагоняем программу в комфортном темпе без стресса.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="emoji">🎯</div>
+                    <h4>ОГЭ на носу</h4>
+                    <p>До экзамена осталось мало времени, а подготовки нет. Работаем по чёткому плану: повторяем теорию, отрабатываем первую и вторую части.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== ОБО МНЕ ===== -->
     <section class="section about-soft" id="about">
         <div class="container">
-            <h2>Немного обо мне</h2>
+            <h2>Обо мне</h2>
             <p class="intro">
-                Меня зовут <strong>Нигора</strong>. Я мусульманка, и для меня важно, чтобы мои ученицы чувствовали себя в безопасности и комфорте, поэтому я преподаю <strong>только девочкам</strong>.
+                Меня зовут <strong>Нигора</strong>. Я репетитор по математике, и для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте.
             </p>
             <div class="about-grid-soft">
                 <div class="about-card-soft">
@@ -632,19 +771,67 @@
                     <p>Я требовательная, но в моём голосе нет холода. Шутки, поддержка и искреннее желание помочь — это про меня.</p>
                 </div>
             </div>
-            <div class="about-signature">
-                <i class="fas fa-quote-left"></i>
-                Я не просто учу математике. Я помогаю девочкам поверить в себя и перестать бояться ошибок. Это моя миссия.
+        </div>
+    </section>
+
+    <!-- ===== КАК ПРОХОДЯТ ЗАНЯТИЯ ===== -->
+    <section class="section format-section" id="format">
+        <div class="container">
+            <h2>Как проходят занятия</h2>
+            <div class="format-grid">
+                <div class="format-card">
+                    <h4>📘 Повышение успеваемости</h4>
+                    <p>Работаем по учебнику, разбираем пробелы, закрепляем материал. Онлайн, без камеры.</p>
+                    <span class="tag">индивидуально</span>
+                </div>
+                <div class="format-card">
+                    <h4>🎯 ВПР и ОГЭ</h4>
+                    <p>Индивидуальный подход под ваш запрос. Разбираем структуру, отрабатываем задания. Онлайн, без камеры.</p>
+                    <span class="tag">индивидуально</span>
+                </div>
+                <div class="format-card">
+                    <h4>👩‍👧‍👧 Групповые занятия</h4>
+                    <p>Работаем по конкретному плану, синхронно. Онлайн, без камеры.</p>
+                    <span class="tag">группа</span>
+                </div>
+            </div>
+
+            <div class="format-note">
+                <i class="fas fa-circle-info"></i>
+                <strong>Важно:</strong> Я не провожу каждое занятие с интерактивами и не пытаюсь развлекать ученицу на уроке. Это делается по мере необходимости и по настроению. Учёба — это про результат, а не про шоу.
             </div>
         </div>
     </section>
 
-    <!-- ===== УСЛУГИ ===== -->
+    <!-- ===== ЦИТАТА ===== -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote>
+                Какая же она красивая и рентабельная — идея, что учёба должна быть интересной и увлекательной. Конечно, кому бы ни хотелось, чтобы знания давались легко и с удовольствием? Но устройству этого мира всё равно на маркетинг. А учиться по-настоящему — это чаще про скуку, чем про веселье.
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- ===== ТРЕБОВАНИЯ К УЧЕНИЦАМ ===== -->
+    <section class="section requirements" id="requirements">
+        <div class="container">
+            <h2>Требования к ученицам</h2>
+            <div class="requirements-grid">
+                <div class="req-item"><i class="fas fa-check-circle"></i> Ответственность</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Делать домашнее задание</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Вовремя оплачивать занятия</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Готовность работать над ошибками</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Пунктуальность</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЦЕНЫ ===== -->
     <section class="section price-section" id="prices">
         <div class="container">
-            <h2>Как мы будем заниматься</h2>
+            <h2>Цены на занятия</h2>
             <div class="price-intro-soft">
-                <p><i class="fas fa-video"></i> Занятия проходят <strong>онлайн</strong>. Если вы в Балашихе — я принимаю очно у себя дома.</p>
+                <p><i class="fas fa-video"></i> Все занятия проходят <strong>онлайн</strong>. Если вы в Балашихе — принимаю очно у себя дома.</p>
             </div>
 
             <div class="price-wrap">
@@ -674,81 +861,25 @@
         </div>
     </section>
 
-    <!-- ===== ДЛЯ РОДИТЕЛЕЙ (ОБНОВЛЁННЫЙ) ===== -->
-    <section class="section parent-soft" id="parents">
+    <!-- ===== ЗАПИСЬ НА ПРОБНЫЙ УРОК ===== -->
+    <section class="cta-section" id="cta">
         <div class="container">
-            <h2>Для родителей</h2>
-            <p style="max-width:640px;color:#5f5549;margin-bottom:16px;">Я знаю, о чём вы переживаете. Вот как я могу помочь вашей дочери.</p>
-            <div class="parent-grid-soft">
-                <div class="parent-item-soft">
-                    <div class="emoji-big">📘</div>
-                    <h4>Двойки и пробелы в знаниях</h4>
-                    <p>Разберём каждую ошибку спокойно и без стресса. Закроем пробелы так, чтобы девочка снова поверила в свои силы и перестала бояться контрольных.</p>
-                </div>
-                <div class="parent-item-soft">
-                    <div class="emoji-big">🧠</div>
-                    <h4>Сложно понять учителя</h4>
-                    <p>Иногда нужен просто другой голос и другой подход. Я объясняю математику через логику и живые примеры — так, чтобы всё вставало на свои места.</p>
-                </div>
-                <div class="parent-item-soft">
-                    <div class="emoji-big">🎯</div>
-                    <h4>ОГЭ на носу</h4>
-                    <p>Чёткая структура без паники: повторяем теорию, отрабатываем первую часть, разбираем вторую. Всё по плану, без воды и лишнего стресса.</p>
-                </div>
-            </div>
+            <h2>Записаться на пробный урок</h2>
+            <p>30 минут бесплатно. Знакомство, диагностика знаний и первые советы.</p>
+            <a href="https://t.me/nigoram27" target="_blank" class="btn btn-bright">
+                <i class="fab fa-telegram-plane"></i> Написать в Telegram
+            </a>
         </div>
     </section>
 
-    <!-- ===== КОНТАКТЫ ===== -->
-    <section class="section contacts-soft" id="contacts">
-        <div class="container">
-            <h2>Начать легко</h2>
-            <div class="steps-soft">
-                <div class="step-soft">
-                    <div class="num-circle">1</div>
-                    <h4>Напишите в Telegram</h4>
-                    <p>Я отвечу, расскажу, согласую время.</p>
-                </div>
-                <div class="step-soft">
-                    <div class="num-circle">2</div>
-                    <h4>Приходите на пробный урок</h4>
-                    <p>30 минут бесплатно. Знакомство и диагностика.</p>
-                </div>
-                <div class="step-soft">
-                    <div class="num-circle">3</div>
-                    <h4>Выбираем удобный формат</h4>
-                    <p>Пакет занятий и график под вас.</p>
-                </div>
-            </div>
-
-            <div class="contact-telegram">
-                <a href="https://t.me/nigoram27" target="_blank" class="btn">
-                    <i class="fab fa-telegram-plane"></i> Написать мне в Telegram
-                </a>
-                <div class="contact-address">
-                    <i class="fas fa-map-pin"></i> Балашиха, ул. Чистопольская 24 — принимаю очно
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ФУТЕР ===== -->
+    <!-- ===== ФУТЕР (ТОЛЬКО TG И VK) ===== -->
     <footer class="footer-soft">
         <div class="container">
             <div class="col">
-                <h4>Нигора</h4>
-                <p>Репетитор по математике для девочек 5–9 класс</p>
-            </div>
-            <div class="col">
-                <h4>Связаться</h4>
                 <p><i class="fab fa-telegram-plane"></i> <a href="https://t.me/nigoram27" target="_blank">@nigoram27</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Балашиха, Чистопольская 24</p>
             </div>
             <div class="col">
-                <h4>Навигация</h4>
-                <p><a href="#about">Обо мне</a></p>
-                <p><a href="#prices">Услуги</a></p>
-                <p><a href="#parents">Родителям</a></p>
+                <p><i class="fab fa-vk"></i> <a href="https://vk.ru/nigoram1" target="_blank">vk.ru/nigoram1</a></p>
             </div>
         </div>
     </footer>
