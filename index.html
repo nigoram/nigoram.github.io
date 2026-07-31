@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ==================== ВЕСЬ CSS ==================== */
         * {
             margin: 0;
             padding: 0;
@@ -224,7 +223,7 @@
 
         .problems-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
 
@@ -324,11 +323,24 @@
             background: #ffffff;
         }
 
+        .format-general {
+            background: #faf6f1;
+            padding: 16px 24px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            border-left: 4px solid #1e3a5f;
+            color: #4a433c;
+        }
+
+        .format-general i {
+            color: #1e3a5f;
+            margin-right: 8px;
+        }
+
         .format-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
-            margin-top: 10px;
         }
 
         .format-card {
@@ -447,6 +459,11 @@
             color: #4a433c;
         }
 
+        .price-intro-soft i {
+            color: #1e3a5f;
+            margin-right: 4px;
+        }
+
         .price-wrap {
             display: flex;
             flex-wrap: wrap;
@@ -491,9 +508,24 @@
             border-bottom: none;
         }
 
-        .price-row span:last-child {
+        .price-row .package {
+            color: #4a433c;
+        }
+
+        .price-row .cost {
             font-weight: 600;
             color: #1e3a5f;
+        }
+
+        .price-note-pack {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #8a7b6b;
+        }
+
+        .price-note-pack i {
+            color: #1e3a5f;
+            margin-right: 4px;
         }
 
         .trial-block {
@@ -530,8 +562,26 @@
 
         .cta-section p {
             color: #5f5549;
-            max-width: 500px;
+            max-width: 540px;
+            margin: 0 auto 12px;
+            font-size: 1.05rem;
+        }
+
+        .cta-section .cta-list {
+            max-width: 480px;
             margin: 0 auto 28px;
+            text-align: left;
+        }
+
+        .cta-section .cta-list p {
+            margin: 0 0 4px 0;
+            font-size: 0.98rem;
+            color: #4a433c;
+        }
+
+        .cta-section .cta-list i {
+            color: #1e3a5f;
+            margin-right: 8px;
         }
 
         /* ===== ФУТЕР ===== */
@@ -640,6 +690,9 @@
             .problems-grid {
                 grid-template-columns: 1fr;
             }
+            .format-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -676,7 +729,7 @@
                 <a href="#cta" class="btn btn-bright"><i class="fas fa-paper-plane"></i> Записаться на пробный урок</a>
             </div>
             <div class="hero-image">
-                <img src="IMG_5819.HEIC" alt="Нигора" />
+                <img src="photo_2026-08-01_00-25-29.jpg" alt="Нигора" />
             </div>
         </div>
     </section>
@@ -684,33 +737,22 @@
     <!-- ===== ПРОБЛЕМЫ ===== -->
     <section class="section problems" id="problems">
         <div class="container">
-            <h2>С чем я работаю</h2>
-            <p class="intro-text">Я знаю, с какими трудностями сталкиваются девушки в 5–9 классе. Вот что я помогаю решить:</p>
+            <p class="intro-text">Вот с чем я помогаю справиться:</p>
             <div class="problems-grid">
                 <div class="problem-card">
-                    <div class="emoji">📉</div>
-                    <h4>Двойки и пробелы</h4>
-                    <p>Ребенок перестал успевать, накопились пробелы, и каждая новая тема даётся тяжелее. Я помогу разобраться с начала и закрыть все слабые места.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="emoji">😰</div>
-                    <h4>Страх контрольных</h4>
-                    <p>Девочка знает тему, но на контрольной теряется, делает глупые ошибки и получает низкие баллы. Работаем над уверенностью и внимательностью.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="emoji">🧩</div>
-                    <h4>«Я ничего не понимаю»</h4>
-                    <p>Учитель в школе объясняет сложно, а в учебнике написано непонятно. Нужен другой голос, другой подход — чтобы математика стала логичной и простой.</p>
+                    <div class="emoji">🎯</div>
+                    <h4>Экзамен вызывает страх и панику</h4>
+                    <p>Мы спокойно проходим всю теорию, необходимую для решения заданий, и отрабатываем её на практике. Без спешки и стресса — чтобы к экзамену прийти с уверенностью.</p>
                 </div>
                 <div class="problem-card">
                     <div class="emoji">⏳</div>
                     <h4>Не успевает за программой</h4>
-                    <p>Класс идёт быстро, а девочка не успевает усваивать материал. Нагоняем программу в комфортном темпе без стресса.</p>
+                    <p>Класс идёт быстро, а дочь не успевает усваивать материал. Нагоняем программу в комфортном темпе без стресса, чтобы она шла в ногу с классом.</p>
                 </div>
                 <div class="problem-card">
-                    <div class="emoji">🎯</div>
-                    <h4>ОГЭ на носу</h4>
-                    <p>До экзамена осталось мало времени, а подготовки нет. Работаем по чёткому плану: повторяем теорию, отрабатываем первую и вторую части.</p>
+                    <div class="emoji">📘</div>
+                    <h4>Двойки и «я ничего не понимаю»</h4>
+                    <p>Накопились пробелы, каждая новая тема даётся тяжело, а в школе объясняют непонятно. Я помогу разобраться с самого начала, объясню через логику и примеры — так, чтобы математика перестала быть страшной.</p>
                 </div>
             </div>
         </div>
@@ -721,23 +763,25 @@
         <div class="container">
             <h2>Обо мне</h2>
             <p class="intro">
-                Меня зовут <strong>Нигора</strong>. Я репетитор по математике, и для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте.
+                Меня зовут <strong>Нигора</strong>. Я репетитор по математике и выпускница РУДН по специальности «Прикладная математика и информатика». 
+                Люблю математику и умею объяснять её по-человечески — без заумных формулировок, с логикой и живыми примерами. 
+                Для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте, поэтому я работаю только с девушками.
             </p>
             <div class="about-grid-soft">
                 <div class="about-card-soft">
-                    <div class="icon-circle"><i class="fas fa-graduation-cap"></i></div>
-                    <h4>Образование</h4>
-                    <p>РУДН, прикладная математика и информатика. Люблю математику и умею объяснять её по-человечески.</p>
-                </div>
-                <div class="about-card-soft">
                     <div class="icon-circle"><i class="fas fa-hand-holding-heart"></i></div>
                     <h4>Мой подход</h4>
-                    <p>Я не даю ответы — я задаю вопросы. Вместе ищем решения, чтобы у девочки появилась уверенность в своих силах.</p>
+                    <p>Я не даю ответы — я задаю вопросы. Вместе ищем решения, чтобы появилась уверенность в своих силах.</p>
                 </div>
                 <div class="about-card-soft">
                     <div class="icon-circle"><i class="fas fa-feather-alt"></i></div>
                     <h4>О строгости и теплоте</h4>
                     <p>Я требовательная, но в моём голосе нет холода. Шутки, поддержка и искреннее желание помочь — это про меня.</p>
+                </div>
+                <div class="about-card-soft">
+                    <div class="icon-circle"><i class="fas fa-gem"></i></div>
+                    <h4>Математика — это логика</h4>
+                    <p>Я учу не запоминать, а понимать. Когда есть логика, формулы перестают быть магией и становятся инструментом.</p>
                 </div>
             </div>
         </div>
@@ -747,20 +791,26 @@
     <section class="section format-section" id="format">
         <div class="container">
             <h2>Как проходят занятия</h2>
+
+            <div class="format-general">
+                <i class="fas fa-circle-info"></i>
+                <strong>Общее для всех форматов:</strong> занятия проходят <strong>онлайн</strong>, без камеры. Это комфортно и ничто не отвлекает от учёбы.
+            </div>
+
             <div class="format-grid">
                 <div class="format-card">
                     <h4>📘 Повышение успеваемости</h4>
-                    <p>Работаем по учебнику, разбираем пробелы, закрепляем материал. Онлайн, без камеры.</p>
+                    <p>Работаем по учебнику, разбираем пробелы, закрепляем материал.</p>
                     <span class="tag">индивидуально</span>
                 </div>
                 <div class="format-card">
                     <h4>🎯 ВПР и ОГЭ</h4>
-                    <p>Индивидуальный подход под ваш запрос. Разбираем структуру, отрабатываем задания. Онлайн, без камеры.</p>
+                    <p>Индивидуальный подход под ваш запрос. Разбираем структуру, отрабатываем задания.</p>
                     <span class="tag">индивидуально</span>
                 </div>
                 <div class="format-card">
                     <h4>👩‍👧‍👧 Групповые занятия</h4>
-                    <p>Работаем по конкретному плану, синхронно. Онлайн, без камеры.</p>
+                    <p>Работаем по конкретному плану, синхронно.</p>
                     <span class="tag">группа</span>
                 </div>
             </div>
@@ -787,10 +837,10 @@
             <h2>Требования к ученицам</h2>
             <div class="requirements-grid">
                 <div class="req-item"><i class="fas fa-check-circle"></i> Ответственность</div>
-                <div class="req-item"><i class="fas fa-check-circle"></i> Делать домашнее задание</div>
-                <div class="req-item"><i class="fas fa-check-circle"></i> Вовремя оплачивать занятия</div>
-                <div class="req-item"><i class="fas fa-check-circle"></i> Готовность работать над ошибками</div>
                 <div class="req-item"><i class="fas fa-check-circle"></i> Пунктуальность</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Делать домашнее задание</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Работать над ошибками</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Вовремя оплачивать занятия</div>
             </div>
         </div>
     </section>
@@ -800,23 +850,26 @@
         <div class="container">
             <h2>Цены на занятия</h2>
             <div class="price-intro-soft">
-                <p><i class="fas fa-video"></i> Все занятия проходят <strong>онлайн</strong>. Если вы в Балашихе — принимаю очно у себя дома.</p>
+                <p><i class="fas fa-video"></i> Занятия проходят <strong>онлайн</strong>. Если вы в Балашихе, могу принять <strong>очно</strong> у себя дома.</p>
+                <p style="margin-top:8px;font-size:0.95rem;color:#8a7b6b;">
+                    <i class="fas fa-info-circle"></i> Стоимость указана за <strong>пакет занятий</strong>. Оплата за пакет.
+                </p>
             </div>
 
             <div class="price-wrap">
                 <div class="price-block">
                     <h3>60 минут</h3>
-                    <div class="time-label">стандартный урок</div>
-                    <div class="price-row"><span>4 занятия (1 раз в неделю)</span><span>4 500 ₽</span></div>
-                    <div class="price-row"><span>8 занятий (2 раза в неделю)</span><span>8 500 ₽</span></div>
-                    <div class="price-row"><span>12 занятий (2 раза в неделю)</span><span>12 800 ₽</span></div>
+                    <div class="time-label">1 200 ₽ / занятие</div>
+                    <div class="price-row"><span class="package">4 занятия</span><span class="cost">4 800 ₽</span></div>
+                    <div class="price-row"><span class="package">8 занятий</span><span class="cost">9 600 ₽</span></div>
+                    <div class="price-row"><span class="package">12 занятий</span><span class="cost">14 400 ₽</span></div>
                 </div>
                 <div class="price-block">
                     <h3>90 минут</h3>
-                    <div class="time-label">углубленный урок</div>
-                    <div class="price-row"><span>4 занятия (1 раз в неделю)</span><span>5 400 ₽</span></div>
-                    <div class="price-row"><span>8 занятий (2 раза в неделю)</span><span>10 800 ₽</span></div>
-                    <div class="price-row"><span>12 занятий (2 раза в неделю)</span><span>16 000 ₽</span></div>
+                    <div class="time-label">1 500 ₽ / занятие</div>
+                    <div class="price-row"><span class="package">4 занятия</span><span class="cost">6 000 ₽</span></div>
+                    <div class="price-row"><span class="package">8 занятий</span><span class="cost">12 000 ₽</span></div>
+                    <div class="price-row"><span class="package">12 занятий</span><span class="cost">18 000 ₽</span></div>
                 </div>
             </div>
 
@@ -824,7 +877,7 @@
                 <span class="label"><i class="fas fa-gift"></i> Бесплатно</span>
                 <span><strong>Пробный урок 30 минут</strong> — знакомимся, проверяю уровень знаний, даю первые советы.</span>
             </div>
-            <div style="margin-top:12px;font-size:0.9rem;color:#8a7b6b;">
+            <div class="price-note-pack">
                 <i class="fas fa-info-circle"></i> Все пакеты действуют в течение месяца. График подбираем вместе.
             </div>
         </div>
@@ -834,7 +887,11 @@
     <section class="cta-section" id="cta">
         <div class="container">
             <h2>Записаться на пробный урок</h2>
-            <p>30 минут бесплатно. Знакомство, диагностика знаний и первые советы.</p>
+            <div class="cta-list">
+                <p><i class="fas fa-check-circle"></i> 30 минут бесплатно</p>
+                <p><i class="fas fa-check-circle"></i> Знакомство и диагностика знаний</p>
+                <p><i class="fas fa-check-circle"></i> Первые советы и план работы</p>
+            </div>
             <a href="https://t.me/nigoram27" target="_blank" class="btn btn-bright">
                 <i class="fab fa-telegram-plane"></i> Написать в Telegram
             </a>
