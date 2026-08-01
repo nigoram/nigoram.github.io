@@ -183,6 +183,7 @@
             font-size: 0.8rem;
         }
 
+        /* ===== ГЛАВНАЯ: ТЕКСТ СПРАВА, ФОТО СЛЕВА ===== */
         .hero {
             padding: 30px 0 50px;
             background: linear-gradient(145deg, #faf6f1 0%, #f0e8df 100%);
@@ -193,6 +194,7 @@
             align-items: center;
             gap: 30px;
             flex-wrap: wrap;
+            flex-direction: row-reverse;
         }
 
         .hero-text {
@@ -258,7 +260,6 @@
             box-shadow: 0 20px 40px -12px rgba(30, 42, 74, 0.2);
             object-fit: cover;
             aspect-ratio: 1/1;
-            transform: scaleX(-1);
         }
 
         .hero-text .guarantee {
@@ -825,10 +826,12 @@
                 font-size: 0.9rem;
             }
 
+            /* На телефонах — фото сверху, текст снизу */
             .hero .container {
                 flex-direction: column-reverse;
                 text-align: center;
             }
+
             .hero-icons {
                 justify-content: center;
             }
@@ -1098,7 +1101,7 @@
         </div>
     </nav>
 
-    <!-- ===== ГЛАВНАЯ ===== -->
+    <!-- ===== ГЛАВНАЯ: ТЕКСТ СПРАВА, ФОТО СЛЕВА ===== -->
     <section class="hero">
         <div class="container">
             <div class="hero-text">
@@ -1118,7 +1121,7 @@
 
                 <div class="guarantee">
                     <i class="fas fa-shield-alt"></i>
-                    Вы ничем не рискуете: если после пробного урока решите, что я не подхожу — мы просто расстанемся без обид.
+                    Вы ничем не рискуете: если после пробного урока решите, что я не подхожу — мы просто расстанемся без обид и без оплаты.
                 </div>
             </div>
             <div class="hero-image">
@@ -1272,7 +1275,7 @@
         <div class="container">
             <h2>Цены на занятия</h2>
             <div class="price-intro-soft">
-                <p><i class="fas fa-video"></i> Занятия проходят <strong>онлайн</strong>.</p>
+                <p><i class="fas fa-video"></i> Занятия проходят <strong>онлайн</strong>. Если вы в Балашихе, могу принять <strong>очно</strong> у себя дома.</p>
                 <p style="margin-top:6px;font-size:0.88rem;color:#8a7b6b;">
                     <i class="fas fa-info-circle"></i> Стоимость указана за <strong>пакет занятий</strong>. Оплата за пакет.
                 </p>
