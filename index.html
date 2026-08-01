@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
+        /* ===== ВЕСЬ CSS (без изменений) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -108,7 +109,6 @@
             margin-right: 8px;
         }
 
-        /* ===== НАВИГАЦИЯ ===== */
         .navbar {
             padding: 16px 0;
             background: #fffffffa;
@@ -155,7 +155,6 @@
             color: #1e3a5f;
         }
 
-        /* ===== ГЛАВНАЯ ===== */
         .hero {
             padding: 40px 0 60px;
             background: linear-gradient(145deg, #faf6f1 0%, #f0e8df 100%);
@@ -233,7 +232,6 @@
             aspect-ratio: 1/1;
         }
 
-        /* ===== ПРОБЛЕМЫ ===== */
         .problems {
             background: #ffffff;
         }
@@ -293,7 +291,6 @@
             font-weight: 500;
         }
 
-        /* ===== ОБО МНЕ ===== */
         .about-soft {
             background: #faf6f1;
         }
@@ -364,7 +361,6 @@
             color: #5f5549;
         }
 
-        /* ===== ФОРМАТ ===== */
         .format-section {
             background: #ffffff;
         }
@@ -437,7 +433,6 @@
             margin-right: 8px;
         }
 
-        /* ===== ЧТО НУЖНО ДЛЯ ЗАНЯТИЙ ===== */
         .equipment-section {
             background: #faf6f1;
         }
@@ -475,7 +470,6 @@
             font-size: 0.9rem;
         }
 
-        /* ===== ЦИТАТА ===== */
         .quote-section {
             background: #faf6f1;
             padding: 50px 0;
@@ -506,7 +500,6 @@
             display: block;
         }
 
-        /* ===== ТРЕБОВАНИЯ ===== */
         .requirements {
             background: #ffffff;
         }
@@ -532,7 +525,6 @@
             font-size: 1.2rem;
         }
 
-        /* ===== ЦЕНЫ ===== */
         .price-section {
             background: #faf6f1;
         }
@@ -612,7 +604,6 @@
             margin-right: 4px;
         }
 
-        /* ===== СКИДКИ ===== */
         .discounts {
             margin-top: 20px;
             padding: 18px 24px;
@@ -663,7 +654,6 @@
             color: #4a433c;
         }
 
-        /* ===== CTA ===== */
         .cta-section {
             background: #ffffff;
             text-align: center;
@@ -701,7 +691,6 @@
             gap: 16px;
         }
 
-        /* ===== ФУТЕР ===== */
         .footer-soft {
             background: #1e2a4a;
             color: #d6c8bc;
@@ -732,7 +721,6 @@
             color: #8a7b6b;
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .navbar .container {
                 flex-direction: column;
@@ -851,7 +839,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-text">
-                <h1>Ниг&#769;ора</h1>
+                <!-- ВАРИАНТ С ЮНИКОД-БУКВОЙ: -->
+                <h1>Ниго́ра</h1>
+                <!-- Если снова съедет, замените на: <h1>Нигора</h1> (без ударения) -->
                 <p class="subtitle">Репетитор по математике</p>
                 <p class="for-whom">для девушек 5–9 классов</p>
 
@@ -1037,7 +1027,6 @@
                 </div>
             </div>
 
-            <!-- ===== СКИДКИ ===== -->
             <div class="discounts">
                 <div class="discount-item">
                     <i class="fas fa-gift"></i> 10% скидка за любой пакет занятий многодетным семьям
