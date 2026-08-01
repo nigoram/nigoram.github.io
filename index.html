@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ===== ВЕСЬ CSS (без изменений) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -107,6 +106,22 @@
 
         .btn-outline-bright i {
             margin-right: 8px;
+        }
+
+        .family-discount-header {
+            background: #f0ebe6;
+            text-align: center;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            color: #1e3a5f;
+            font-weight: 500;
+            border-bottom: 1px solid #e8e0d8;
+            letter-spacing: 0.3px;
+        }
+
+        .family-discount-header i {
+            color: #e88d4a;
+            margin-right: 6px;
         }
 
         .navbar {
@@ -230,6 +245,24 @@
             box-shadow: 0 20px 40px -12px rgba(30, 42, 74, 0.2);
             object-fit: cover;
             aspect-ratio: 1/1;
+            transform: scaleX(-1);
+        }
+
+        .hero-text .guarantee {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: #5f5549;
+            background: #ffffffcc;
+            padding: 10px 18px;
+            border-radius: 60px;
+            display: inline-block;
+            border: 1px solid #e8e0d8;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-text .guarantee i {
+            color: #e88d4a;
+            margin-right: 6px;
         }
 
         .problems {
@@ -433,6 +466,37 @@
             margin-right: 8px;
         }
 
+        /* ===== ЦИТАТА ===== */
+        .quote-section {
+            background: #faf6f1;
+            padding: 50px 0;
+        }
+
+        .quote-section .container {
+            max-width: 800px;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #2d2a24;
+            line-height: 1.8;
+            font-style: italic;
+            padding: 20px 28px;
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e8e0d8;
+        }
+
+        .quote-section blockquote::before {
+            content: '\201C';
+            font-size: 3rem;
+            color: #1e3a5f;
+            font-style: normal;
+            line-height: 0.5;
+            display: block;
+        }
+
         .equipment-section {
             background: #faf6f1;
         }
@@ -468,36 +532,6 @@
             font-weight: 400;
             color: #8a7b6b;
             font-size: 0.9rem;
-        }
-
-        .quote-section {
-            background: #faf6f1;
-            padding: 50px 0;
-        }
-
-        .quote-section .container {
-            max-width: 800px;
-        }
-
-        .quote-section blockquote {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #2d2a24;
-            line-height: 1.8;
-            font-style: italic;
-            padding: 20px 28px;
-            background: #ffffff;
-            border-radius: 24px;
-            border: 1px solid #e8e0d8;
-        }
-
-        .quote-section blockquote::before {
-            content: '\201C';
-            font-size: 3rem;
-            color: #1e3a5f;
-            font-style: normal;
-            line-height: 0.5;
-            display: block;
         }
 
         .requirements {
@@ -763,6 +797,12 @@
             .hero-image img {
                 max-width: 220px;
             }
+            .hero-text .guarantee {
+                font-size: 0.8rem;
+                padding: 8px 14px;
+                text-align: center;
+                display: block;
+            }
             .quote-section blockquote {
                 font-size: 1rem;
                 padding: 16px 20px;
@@ -784,6 +824,10 @@
             }
             .equipment-grid {
                 grid-template-columns: 1fr;
+            }
+            .family-discount-header {
+                font-size: 0.75rem;
+                padding: 4px 10px;
             }
         }
 
@@ -821,6 +865,11 @@
 </head>
 <body>
 
+    <!-- ===== СТРОКА СО СКИДКОЙ ===== -->
+    <div class="family-discount-header">
+        <i class="fas fa-gift"></i> Действуют семейные скидки — спрашивайте
+    </div>
+
     <!-- ===== НАВИГАЦИЯ ===== -->
     <nav class="navbar">
         <div class="container">
@@ -839,9 +888,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-text">
-                <!-- ВАРИАНТ С ЮНИКОД-БУКВОЙ: -->
                 <h1>Нигора</h1>
-                <!-- Если снова съедет, замените на: <h1>Нигора</h1> (без ударения) -->
                 <p class="subtitle">Репетитор по математике</p>
                 <p class="for-whom">для девушек 5–9 классов</p>
 
@@ -851,7 +898,14 @@
                     <span class="icon-item"><i class="fas fa-check-circle"></i> Повышение успеваемости</span>
                 </div>
 
-                <a href="#cta" class="btn btn-bright"><i class="fas fa-paper-plane"></i> Записаться на пробный урок</a>
+                <a href="https://t.me/nigoram27" target="_blank" class="btn btn-bright">
+                    <i class="fas fa-paper-plane"></i> Записаться на пробный урок
+                </a>
+
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    Вы ничем не рискуете: если после пробного урока решите, что я не подхожу — мы просто расстанемся без обид и без оплаты.
+                </div>
             </div>
             <div class="hero-image">
                 <img src="photo_2026-08-01_00-25-29.jpg" alt="Нигора" />
@@ -869,17 +923,17 @@
                 <div class="problem-card">
                     <div class="emoji">🎯</div>
                     <h4>ОГЭ вызывает страх и панику</h4>
-                    <p>Мы спокойно проходим всю теорию, необходимую для решения заданий, и отрабатываем её на практике. Без спешки и стресса — чтобы к экзамену прийти с уверенностью.</p>
+                    <p>Мы спокойно проходим всю теорию, необходимую для решения заданий, и отрабатываем её на практике. <strong>Чтобы ваша дочь перестала бояться экзамена и набрала свои баллы без паники.</strong></p>
                 </div>
                 <div class="problem-card">
                     <div class="emoji">⏳</div>
                     <h4>Не успевает за программой</h4>
-                    <p>Класс идёт быстро, а дочь не успевает усваивать материал. Нагоняем программу в комфортном темпе без стресса, чтобы она шла в ногу с классом.</p>
+                    <p>Нагоняем программу в комфортном темпе без стресса. <strong>Чтобы она пришла в класс и спокойно отвечала у доски, а не сидела с пустым взглядом.</strong></p>
                 </div>
                 <div class="problem-card">
                     <div class="emoji">📘</div>
                     <h4>Двойки и «я ничего не понимаю»</h4>
-                    <p>Накопились пробелы, каждая новая тема даётся тяжело, а в школе объясняют непонятно. Я помогу разобраться с самого начала, объясню через логику и примеры — так, чтобы математика перестала быть страшной.</p>
+                    <p>Я помогу разобраться с самого начала, объясню через логику и примеры. <strong>Чтобы двойки в дневнике остались в прошлом, а математика перестала быть страшной.</strong></p>
                 </div>
             </div>
             <p class="closing-text"><strong>— то вам ко мне.</strong></p>
@@ -945,8 +999,17 @@
 
             <div class="format-note">
                 <i class="fas fa-circle-info"></i>
-                <strong>Важно:</strong> Я не провожу каждое занятие с интерактивами и не пытаюсь развлекать ученицу на уроке. Это делается по мере необходимости и по настроению. Учёба — это про результат, а не про шоу.
+                <strong>Важно:</strong> Я делаю упор на понимание, а не на развлечение. Конечно, если вижу, что девочка устала или зависла на теме, могу переключить внимание или пошутить — но это скорее исключение, чем правило. Система — это про дисциплину и регулярность, а не про шоу.
             </div>
+        </div>
+    </section>
+
+    <!-- ===== ЦИТАТА (ПЕРЕНЕСЕНА СЮДА) ===== -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote>
+                Я верю, что настоящие знания рождаются не в игре, а в сосредоточенной работе. Да, это не всегда весело. Но когда у девочки начинает получаться — это даёт гораздо больше радости, чем любая игра.
+            </blockquote>
         </div>
     </section>
 
@@ -972,15 +1035,6 @@
                     <span>Желание учиться и получать знания</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ===== ЦИТАТА ===== -->
-    <section class="quote-section">
-        <div class="container">
-            <blockquote>
-                Какая же она красивая и рентабельная — идея, что учёба должна быть интересной и увлекательной. Конечно, кому бы ни хотелось, чтобы знания давались легко и с удовольствием? Но устройству этого мира всё равно на маркетинг. А учиться по-настоящему — это чаще про скуку, чем про веселье.
-            </blockquote>
         </div>
     </section>
 
