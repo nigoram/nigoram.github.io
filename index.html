@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>Нигора — репетитор по математике для девушек</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,12 +20,14 @@
             background: #faf6f1;
             color: #2d2a24;
             line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         h1,
@@ -42,14 +44,14 @@
         }
 
         .section {
-            padding: 60px 0;
+            padding: 50px 0;
         }
 
         .btn {
             display: inline-block;
             background: #1e3a5f;
             color: #fff;
-            padding: 16px 40px;
+            padding: 16px 36px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 500;
@@ -58,6 +60,7 @@
             box-shadow: 0 4px 14px rgba(30, 58, 95, 0.25);
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn:hover {
@@ -71,24 +74,24 @@
 
         .btn-bright {
             background: #e88d4a;
-            box-shadow: 0 6px 24px rgba(232, 141, 74, 0.45);
+            box-shadow: 0 6px 24px rgba(232, 141, 74, 0.4);
             color: #fff;
             font-weight: 600;
-            font-size: 1.1rem;
-            padding: 18px 48px;
+            font-size: 1.05rem;
+            padding: 16px 36px;
         }
 
         .btn-bright:hover {
             background: #d47a3a;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(232, 141, 74, 0.55);
+            box-shadow: 0 8px 30px rgba(232, 141, 74, 0.5);
         }
 
         .btn-outline-bright {
             display: inline-block;
             background: transparent;
             color: #e88d4a;
-            padding: 16px 40px;
+            padding: 16px 36px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 500;
@@ -96,6 +99,7 @@
             transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
             border: 2px solid #e88d4a;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn-outline-bright:hover {
@@ -111,12 +115,12 @@
         .family-discount-header {
             background: #f0ebe6;
             text-align: center;
-            padding: 6px 12px;
+            padding: 8px 12px;
             font-size: 0.85rem;
             color: #1e3a5f;
             font-weight: 500;
             border-bottom: 1px solid #e8e0d8;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
         }
 
         .family-discount-header i {
@@ -125,9 +129,10 @@
         }
 
         .navbar {
-            padding: 16px 0;
+            padding: 14px 0;
             background: #fffffffa;
             backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             position: sticky;
             top: 0;
             z-index: 999;
@@ -139,11 +144,12 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 8px;
         }
 
         .logo {
             font-weight: 600;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #1e2a4a;
         }
 
@@ -154,31 +160,38 @@
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 16px;
             list-style: none;
             font-weight: 500;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #4a433c;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: color 0.2s;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
             color: #1e3a5f;
         }
 
+        .nav-links a i {
+            margin-right: 4px;
+            font-size: 0.8rem;
+        }
+
         .hero {
-            padding: 40px 0 60px;
+            padding: 30px 0 50px;
             background: linear-gradient(145deg, #faf6f1 0%, #f0e8df 100%);
         }
 
         .hero .container {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
@@ -187,60 +200,60 @@
         }
 
         .hero-text h1 {
-            font-size: 3.4rem;
+            font-size: 3rem;
             line-height: 1.1;
             color: #1e2a4a;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .hero-text .subtitle {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 500;
             color: #1e3a5f;
             margin-bottom: 2px;
         }
 
         .hero-text .for-whom {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #8a7b6b;
             font-weight: 400;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
         }
 
         .hero-icons {
             display: flex;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 24px;
             flex-wrap: wrap;
         }
 
         .hero-icons .icon-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: #ffffff;
-            padding: 8px 20px 8px 16px;
+            padding: 6px 16px 6px 12px;
             border-radius: 60px;
             border: 1px solid #e8e0d8;
             font-weight: 500;
             color: #1e2a4a;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
         .hero-icons .icon-item i {
             color: #1e3a5f;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
         }
 
         .hero-image {
-            flex: 1 1 280px;
+            flex: 1 1 240px;
             text-align: center;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 320px;
+            max-width: 280px;
             border-radius: 50%;
             box-shadow: 0 20px 40px -12px rgba(30, 42, 74, 0.2);
             object-fit: cover;
@@ -249,15 +262,16 @@
         }
 
         .hero-text .guarantee {
-            margin-top: 16px;
-            font-size: 0.9rem;
+            margin-top: 14px;
+            font-size: 0.85rem;
             color: #5f5549;
             background: #ffffffcc;
-            padding: 10px 18px;
+            padding: 10px 16px;
             border-radius: 60px;
             display: inline-block;
             border: 1px solid #e8e0d8;
             backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
         }
 
         .hero-text .guarantee i {
@@ -272,8 +286,8 @@
         .problems .intro-text {
             max-width: 700px;
             color: #4a433c;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
+            margin-bottom: 24px;
+            font-size: 1.05rem;
             font-weight: 400;
         }
 
@@ -284,13 +298,13 @@
 
         .problems-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
         }
 
         .problem-card {
             background: #faf6f1;
-            padding: 22px 20px;
+            padding: 20px 18px;
             border-radius: 20px;
             border: 1px solid #e8e0d8;
             transition: border 0.2s, box-shadow 0.2s;
@@ -302,24 +316,24 @@
         }
 
         .problem-card .emoji {
-            font-size: 1.8rem;
-            margin-bottom: 4px;
+            font-size: 1.6rem;
+            margin-bottom: 2px;
         }
 
         .problem-card h4 {
             color: #1e2a4a;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 2px;
         }
 
         .problem-card p {
             color: #5f5549;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
         }
 
         .problems .closing-text {
-            margin-top: 24px;
-            font-size: 1.05rem;
+            margin-top: 20px;
+            font-size: 1rem;
             color: #4a433c;
             font-weight: 500;
         }
@@ -331,8 +345,8 @@
         .about-soft .intro-text {
             max-width: 720px;
             color: #4a433c;
-            font-size: 1.05rem;
-            margin-bottom: 10px;
+            font-size: 1rem;
+            margin-bottom: 8px;
         }
 
         .about-soft .intro-text strong {
@@ -346,21 +360,21 @@
         }
 
         .about-soft .intro-text p {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .about-grid-soft {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 10px;
+            gap: 20px;
+            margin-top: 8px;
         }
 
         .about-card-soft {
-            flex: 1 1 200px;
+            flex: 1 1 180px;
             background: #ffffff;
-            padding: 24px 22px;
-            border-radius: 24px;
+            padding: 20px 18px;
+            border-radius: 20px;
             border: 1px solid #e8e0d8;
             transition: border 0.2s, box-shadow 0.2s;
         }
@@ -372,25 +386,25 @@
 
         .about-card-soft .icon-circle {
             background: #e8e0d8;
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #1e3a5f;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .about-card-soft h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
             color: #1e2a4a;
         }
 
         .about-card-soft p {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: #5f5549;
         }
 
@@ -400,28 +414,29 @@
 
         .format-general {
             background: #faf6f1;
-            padding: 16px 24px;
-            border-radius: 20px;
-            margin-bottom: 24px;
+            padding: 14px 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
             border-left: 4px solid #1e3a5f;
             color: #4a433c;
+            font-size: 0.95rem;
         }
 
         .format-general i {
             color: #1e3a5f;
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
         .format-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
         }
 
         .format-card {
             background: #faf6f1;
-            padding: 24px 22px;
-            border-radius: 20px;
+            padding: 20px 18px;
+            border-radius: 16px;
             border: 1px solid #e8e0d8;
             transition: border 0.2s;
         }
@@ -432,44 +447,44 @@
 
         .format-card h4 {
             color: #1e2a4a;
-            font-size: 1.05rem;
-            margin-bottom: 4px;
+            font-size: 1rem;
+            margin-bottom: 2px;
         }
 
         .format-card p {
             color: #5f5549;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
         }
 
         .format-card .tag {
             display: inline-block;
             background: #e8e0d8;
             color: #4a433c;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
-            padding: 2px 12px;
+            padding: 2px 10px;
             border-radius: 60px;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
         .format-note {
-            margin-top: 24px;
+            margin-top: 20px;
             background: #faf6f1;
-            padding: 16px 24px;
-            border-radius: 20px;
+            padding: 14px 20px;
+            border-radius: 16px;
             border-left: 4px solid #1e3a5f;
             color: #4a433c;
+            font-size: 0.92rem;
         }
 
         .format-note i {
             color: #1e3a5f;
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
-        /* ===== ЦИТАТА ===== */
         .quote-section {
             background: #faf6f1;
-            padding: 50px 0;
+            padding: 40px 0;
         }
 
         .quote-section .container {
@@ -477,20 +492,20 @@
         }
 
         .quote-section blockquote {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 400;
             color: #2d2a24;
-            line-height: 1.8;
+            line-height: 1.7;
             font-style: italic;
-            padding: 20px 28px;
+            padding: 18px 24px;
             background: #ffffff;
-            border-radius: 24px;
+            border-radius: 20px;
             border: 1px solid #e8e0d8;
         }
 
         .quote-section blockquote::before {
             content: '\201C';
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #1e3a5f;
             font-style: normal;
             line-height: 0.5;
@@ -503,35 +518,35 @@
 
         .equipment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 6px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 4px;
         }
 
         .equipment-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: #ffffff;
-            padding: 16px 20px;
-            border-radius: 16px;
+            padding: 14px 16px;
+            border-radius: 14px;
             border: 1px solid #e8e0d8;
-            font-size: 1rem;
+            font-size: 0.92rem;
             color: #1e2a4a;
             font-weight: 500;
         }
 
         .equipment-item i {
             color: #e88d4a;
-            font-size: 1.3rem;
-            width: 28px;
+            font-size: 1.2rem;
+            width: 24px;
             text-align: center;
         }
 
         .equipment-item .light {
             font-weight: 400;
             color: #8a7b6b;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
         }
 
         .requirements {
@@ -541,22 +556,22 @@
         .requirements-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px 40px;
-            margin-top: 6px;
+            gap: 12px 24px;
+            margin-top: 4px;
         }
 
         .requirements-grid .req-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.05rem;
+            gap: 8px;
+            font-size: 0.95rem;
             color: #1e2a4a;
             font-weight: 500;
         }
 
         .requirements-grid .req-item i {
             color: #1e3a5f;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .price-section {
@@ -565,8 +580,9 @@
 
         .price-intro-soft {
             max-width: 680px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             color: #4a433c;
+            font-size: 0.95rem;
         }
 
         .price-intro-soft i {
@@ -577,14 +593,14 @@
         .price-wrap {
             display: flex;
             flex-wrap: wrap;
-            gap: 24px;
+            gap: 16px;
         }
 
         .price-block {
-            flex: 1 1 260px;
+            flex: 1 1 240px;
             background: #ffffff;
-            border-radius: 24px;
-            padding: 28px 24px;
+            border-radius: 20px;
+            padding: 24px 20px;
             border: 1px solid #e8e0d8;
             transition: border 0.2s, box-shadow 0.2s;
         }
@@ -595,23 +611,24 @@
         }
 
         .price-block h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #1e2a4a;
             margin-bottom: 2px;
         }
 
         .price-block .time-label {
             color: #8a7b6b;
-            font-size: 0.9rem;
-            margin-bottom: 16px;
+            font-size: 0.82rem;
+            margin-bottom: 12px;
         }
 
         .price-row {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #f0ebe6;
             font-weight: 500;
+            font-size: 0.92rem;
         }
 
         .price-row:last-child {
@@ -628,8 +645,8 @@
         }
 
         .price-note-pack {
-            margin-top: 12px;
-            font-size: 0.9rem;
+            margin-top: 10px;
+            font-size: 0.82rem;
             color: #8a7b6b;
         }
 
@@ -639,49 +656,50 @@
         }
 
         .discounts {
-            margin-top: 20px;
-            padding: 18px 24px;
+            margin-top: 16px;
+            padding: 14px 20px;
             background: #ffffff;
-            border-radius: 20px;
+            border-radius: 16px;
             border: 1px solid #e8e0d8;
             display: flex;
             flex-wrap: wrap;
-            gap: 12px 30px;
+            gap: 10px 20px;
         }
 
         .discounts .discount-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
+            gap: 8px;
+            font-size: 0.88rem;
             color: #1e2a4a;
             font-weight: 500;
         }
 
         .discounts .discount-item i {
             color: #e88d4a;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .trial-block {
             background: #ffffff;
-            border-radius: 20px;
-            padding: 18px 24px;
-            margin-top: 24px;
+            border-radius: 16px;
+            padding: 14px 20px;
+            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 12px 24px;
+            gap: 10px 20px;
             border: 1px solid #e8e0d8;
+            font-size: 0.92rem;
         }
 
         .trial-block .label {
             background: #e88d4a;
             color: #fff;
             font-weight: 600;
-            padding: 2px 14px;
+            padding: 2px 12px;
             border-radius: 60px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         .trial-block span {
@@ -691,25 +709,25 @@
         .cta-section {
             background: #ffffff;
             text-align: center;
-            padding: 50px 0;
+            padding: 40px 0;
         }
 
         .cta-section p {
             color: #5f5549;
-            max-width: 540px;
-            margin: 0 auto 12px;
-            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto 10px;
+            font-size: 1rem;
         }
 
         .cta-section .cta-list {
-            max-width: 480px;
-            margin: 0 auto 28px;
+            max-width: 440px;
+            margin: 0 auto 24px;
             text-align: left;
         }
 
         .cta-section .cta-list p {
             margin: 0 0 4px 0;
-            font-size: 0.98rem;
+            font-size: 0.92rem;
             color: #4a433c;
         }
 
@@ -722,27 +740,33 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 16px;
+            gap: 12px;
+        }
+
+        .cta-buttons .btn,
+        .cta-buttons .btn-outline-bright {
+            min-width: 200px;
+            flex: 1 1 auto;
         }
 
         .footer-soft {
             background: #1e2a4a;
             color: #d6c8bc;
-            padding: 32px 0;
+            padding: 28px 0;
         }
 
         .footer-soft .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
+            gap: 28px;
             text-align: center;
         }
 
         .footer-soft .col p,
         .footer-soft .col a {
             color: #b8a99a;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-decoration: none;
         }
 
@@ -751,26 +775,56 @@
         }
 
         .footer-soft .col i {
-            width: 24px;
+            width: 22px;
             color: #8a7b6b;
+        }
+
+        /* ============================================================ */
+        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+        /* ============================================================ */
+
+        @media (max-width: 900px) {
+            .hero-text h1 {
+                font-size: 2.6rem;
+            }
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+            .hero-image img {
+                max-width: 240px;
+            }
+            .hero .container {
+                gap: 20px;
+            }
         }
 
         @media (max-width: 768px) {
             .navbar .container {
                 flex-direction: column;
-                gap: 10px;
+                gap: 6px;
             }
+
             .nav-links {
-                flex-wrap: wrap;
+                gap: 10px 14px;
                 justify-content: center;
-                gap: 14px 20px;
             }
+            .nav-links a {
+                font-size: 0.78rem;
+            }
+            .nav-links a i {
+                display: none;
+            }
+
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             .hero-text .subtitle {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
+            .hero-text .for-whom {
+                font-size: 0.9rem;
+            }
+
             .hero .container {
                 flex-direction: column-reverse;
                 text-align: center;
@@ -778,6 +832,17 @@
             .hero-icons {
                 justify-content: center;
             }
+            .hero-text .guarantee {
+                display: block;
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 8px 14px;
+            }
+
+            .hero-image img {
+                max-width: 200px;
+            }
+
             .about-grid-soft {
                 flex-direction: column;
             }
@@ -786,27 +851,21 @@
             }
             .footer-soft .container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 16px;
             }
+
             .section {
-                padding: 40px 0;
+                padding: 36px 0;
             }
             h2 {
-                font-size: 1.7rem;
+                font-size: 1.6rem;
             }
-            .hero-image img {
-                max-width: 220px;
-            }
-            .hero-text .guarantee {
-                font-size: 0.8rem;
-                padding: 8px 14px;
-                text-align: center;
-                display: block;
-            }
+
             .quote-section blockquote {
-                font-size: 1rem;
-                padding: 16px 20px;
+                font-size: 0.98rem;
+                padding: 14px 18px;
             }
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -816,49 +875,204 @@
                 width: 100%;
                 max-width: 320px;
                 text-align: center;
+                padding: 14px 20px;
+                font-size: 0.95rem;
             }
+
             .discounts {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 10px;
+                gap: 8px;
             }
             .equipment-grid {
                 grid-template-columns: 1fr;
             }
+
             .family-discount-header {
-                font-size: 0.75rem;
-                padding: 4px 10px;
+                font-size: 0.72rem;
+                padding: 6px 10px;
+            }
+
+            .format-grid {
+                grid-template-columns: 1fr;
+            }
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+            .requirements-grid {
+                flex-direction: column;
+                gap: 6px;
+                align-items: flex-start;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+            }
+
+            .trial-block {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            .hero-text .btn-bright {
+                width: 100%;
             }
         }
 
         @media (max-width: 480px) {
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .hero-text .subtitle {
+                font-size: 0.95rem;
+            }
+            .hero-text .for-whom {
+                font-size: 0.8rem;
+                margin-bottom: 14px;
+            }
+
+            .hero-image img {
+                max-width: 160px;
+            }
+
+            .hero-icons .icon-item {
+                font-size: 0.72rem;
+                padding: 4px 12px 4px 8px;
+            }
+            .hero-icons {
+                gap: 8px;
+            }
+
+            .problem-card {
+                padding: 16px 14px;
+            }
+            .problem-card .emoji {
+                font-size: 1.3rem;
+            }
+            .problem-card h4 {
+                font-size: 0.88rem;
+            }
+            .problem-card p {
+                font-size: 0.82rem;
+            }
+
+            .about-card-soft {
+                padding: 16px 14px;
+            }
+            .about-card-soft .icon-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+            .about-card-soft h4 {
+                font-size: 0.88rem;
+            }
+            .about-card-soft p {
+                font-size: 0.82rem;
+            }
+
+            .price-block {
+                padding: 18px 16px;
+            }
+            .price-block h3 {
+                font-size: 1rem;
+            }
+            .price-row {
+                font-size: 0.85rem;
+                padding: 6px 0;
+            }
+
+            .quote-section blockquote {
+                font-size: 0.9rem;
+                padding: 12px 16px;
+            }
+            .quote-section blockquote::before {
+                font-size: 2rem;
+            }
+
+            .equipment-item {
+                font-size: 0.85rem;
+                padding: 12px 14px;
+            }
+            .equipment-item i {
+                font-size: 1rem;
+                width: 20px;
+            }
+
+            .format-card {
+                padding: 16px 14px;
+            }
+            .format-card h4 {
+                font-size: 0.92rem;
+            }
+            .format-card p {
+                font-size: 0.82rem;
+            }
+
+            .cta-section .cta-list p {
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+            .section {
+                padding: 28px 0;
+            }
+            h2 {
+                font-size: 1.4rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .discounts .discount-item {
+                font-size: 0.8rem;
+            }
+            .trial-block {
+                font-size: 0.85rem;
+                padding: 12px 16px;
+            }
+
+            .requirements-grid .req-item {
+                font-size: 0.85rem;
+            }
+            .family-discount-header {
+                font-size: 0.65rem;
+                padding: 4px 8px;
+            }
+
+            .logo {
                 font-size: 1.1rem;
             }
-            .btn {
-                padding: 14px 24px;
-                font-size: 0.9rem;
-                width: 100%;
-                text-align: center;
+            .nav-links a {
+                font-size: 0.7rem;
             }
-            .container {
-                padding: 0 16px;
+            .nav-links {
+                gap: 8px 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-text h1 {
+                font-size: 1.5rem;
             }
             .hero-image img {
-                max-width: 180px;
+                max-width: 130px;
             }
             .hero-icons .icon-item {
-                font-size: 0.8rem;
-                padding: 6px 14px 6px 12px;
+                font-size: 0.65rem;
+                padding: 3px 10px 3px 6px;
             }
-            .problems-grid {
-                grid-template-columns: 1fr;
-            }
-            .format-grid {
-                grid-template-columns: 1fr;
+            .btn-bright {
+                font-size: 0.85rem;
+                padding: 12px 16px;
             }
         }
     </style>
@@ -875,8 +1089,8 @@
         <div class="container">
             <div class="logo">Нигора<span>Math</span></div>
             <ul class="nav-links">
-                <li><a href="#problems"><i class="fas fa-lightbulb" style="color:#1e3a5f;"></i> Проблемы</a></li>
-                <li><a href="#about"><i class="fas fa-heart" style="color:#1e3a5f;"></i> Обо мне</a></li>
+                <li><a href="#problems"><i class="fas fa-lightbulb"></i> Проблемы</a></li>
+                <li><a href="#about"><i class="fas fa-heart"></i> Обо мне</a></li>
                 <li><a href="#format"><i class="fas fa-video"></i> Формат</a></li>
                 <li><a href="#prices"><i class="fas fa-tag"></i> Цены</a></li>
                 <li><a href="#cta"><i class="fas fa-paper-plane"></i> Запись</a></li>
@@ -904,7 +1118,7 @@
 
                 <div class="guarantee">
                     <i class="fas fa-shield-alt"></i>
-                    Вы ничем не рискуете: если после пробного урока решите, что я не подхожу — мы просто расстанемся без обид и без оплаты.
+                    Вы ничем не рискуете: если после пробного урока решите, что я не подхожу — мы просто расстанемся без обид.
                 </div>
             </div>
             <div class="hero-image">
@@ -1004,7 +1218,7 @@
         </div>
     </section>
 
-    <!-- ===== ЦИТАТА (ПЕРЕНЕСЕНА СЮДА) ===== -->
+    <!-- ===== ЦИТАТА ===== -->
     <section class="quote-section">
         <div class="container">
             <blockquote>
@@ -1058,8 +1272,8 @@
         <div class="container">
             <h2>Цены на занятия</h2>
             <div class="price-intro-soft">
-                <p><i class="fas fa-video"></i> Занятия проходят <strong>онлайн</strong>. Если вы в Балашихе, могу принять <strong>очно</strong> у себя дома.</p>
-                <p style="margin-top:8px;font-size:0.95rem;color:#8a7b6b;">
+                <p><i class="fas fa-video"></i> Занятия проходят <strong>онлайн</strong>.</p>
+                <p style="margin-top:6px;font-size:0.88rem;color:#8a7b6b;">
                     <i class="fas fa-info-circle"></i> Стоимость указана за <strong>пакет занятий</strong>. Оплата за пакет.
                 </p>
             </div>
