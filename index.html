@@ -233,7 +233,7 @@
             aspect-ratio: 1/1;
         }
 
-        /* ===== ПРОБЛЕМЫ (НОВОЕ НАЧАЛО) ===== */
+        /* ===== ПРОБЛЕМЫ ===== */
         .problems {
             background: #ffffff;
         }
@@ -286,7 +286,14 @@
             font-size: 0.92rem;
         }
 
-        /* ===== ОБО МНЕ (НОВЫЙ ТЕКСТ) ===== */
+        .problems .closing-text {
+            margin-top: 24px;
+            font-size: 1.05rem;
+            color: #4a433c;
+            font-weight: 500;
+        }
+
+        /* ===== ОБО МНЕ ===== */
         .about-soft {
             background: #faf6f1;
         }
@@ -306,6 +313,10 @@
         .about-soft .intro-text .highlight {
             color: #1e3a5f;
             font-weight: 500;
+        }
+
+        .about-soft .intro-text p {
+            margin-bottom: 8px;
         }
 
         .about-grid-soft {
@@ -424,6 +435,44 @@
         .format-note i {
             color: #1e3a5f;
             margin-right: 8px;
+        }
+
+        /* ===== ЧТО НУЖНО ДЛЯ ЗАНЯТИЙ ===== */
+        .equipment-section {
+            background: #faf6f1;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 6px;
+        }
+
+        .equipment-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: 16px;
+            border: 1px solid #e8e0d8;
+            font-size: 1rem;
+            color: #1e2a4a;
+            font-weight: 500;
+        }
+
+        .equipment-item i {
+            color: #e88d4a;
+            font-size: 1.3rem;
+            width: 28px;
+            text-align: center;
+        }
+
+        .equipment-item .light {
+            font-weight: 400;
+            color: #8a7b6b;
+            font-size: 0.9rem;
         }
 
         /* ===== ЦИТАТА ===== */
@@ -745,6 +794,9 @@
                 align-items: flex-start;
                 gap: 10px;
             }
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -799,7 +851,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-text">
-                <h1>Нигора</h1>
+                <h1>Ниго&#769;ра</h1>
                 <p class="subtitle">Репетитор по математике</p>
                 <p class="for-whom">для девушек 5–9 классов</p>
 
@@ -817,7 +869,7 @@
         </div>
     </section>
 
-    <!-- ===== ПРОБЛЕМЫ (НОВОЕ НАЧАЛО) ===== -->
+    <!-- ===== ПРОБЛЕМЫ ===== -->
     <section class="section problems" id="problems">
         <div class="container">
             <p class="intro-text">
@@ -840,20 +892,18 @@
                     <p>Накопились пробелы, каждая новая тема даётся тяжело, а в школе объясняют непонятно. Я помогу разобраться с самого начала, объясню через логику и примеры — так, чтобы математика перестала быть страшной.</p>
                 </div>
             </div>
-            <p style="margin-top:24px;font-size:1.05rem;color:#4a433c;font-weight:500;">
-                <strong>— то вам ко мне.</strong>
-            </p>
+            <p class="closing-text"><strong>— то вам ко мне.</strong></p>
         </div>
     </section>
 
-    <!-- ===== ОБО МНЕ (НОВЫЙ ТЕКСТ) ===== -->
+    <!-- ===== ОБО МНЕ ===== -->
     <section class="section about-soft" id="about">
         <div class="container">
             <h2>Обо мне</h2>
             <div class="intro-text">
                 <p><strong>Выпускница РУДН</strong> по специальности «Прикладная математика и информатика».</p>
-                <p style="margin-top:8px;">Люблю математику и умею объяснять её по-человечески — без заумных формулировок, с логикой и живыми примерами.</p>
-                <p style="margin-top:8px;">Для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте, поэтому я работаю <span class="highlight">только с девушками</span>.</p>
+                <p>Люблю математику и умею объяснять её по-человечески — без заумных формулировок, с логикой и живыми примерами.</p>
+                <p>Для меня важно, чтобы ученицы чувствовали себя в безопасности и комфорте, поэтому я работаю <span class="highlight">только с девушками</span>.</p>
             </div>
             <div class="about-grid-soft">
                 <div class="about-card-soft">
@@ -910,6 +960,31 @@
         </div>
     </section>
 
+    <!-- ===== ЧТО НУЖНО ДЛЯ ЗАНЯТИЙ ===== -->
+    <section class="section equipment-section" id="equipment">
+        <div class="container">
+            <h2>Что нужно для занятий онлайн</h2>
+            <div class="equipment-grid">
+                <div class="equipment-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Телефон <span class="light">(желательно планшет + стилус или ноутбук)</span></span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-book"></i>
+                    <span>Тетрадь <span class="light">(2 штуки)</span></span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-pen"></i>
+                    <span>Ручка</span>
+                </div>
+                <div class="equipment-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Желание учиться и получать знания</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== ЦИТАТА ===== -->
     <section class="quote-section">
         <div class="container">
@@ -925,6 +1000,7 @@
             <h2>Требования к ученицам</h2>
             <div class="requirements-grid">
                 <div class="req-item"><i class="fas fa-check-circle"></i> Ответственность</div>
+                <div class="req-item"><i class="fas fa-check-circle"></i> Дисциплинированность</div>
                 <div class="req-item"><i class="fas fa-check-circle"></i> Пунктуальность</div>
                 <div class="req-item"><i class="fas fa-check-circle"></i> Делать домашнее задание</div>
                 <div class="req-item"><i class="fas fa-check-circle"></i> Работать над ошибками</div>
